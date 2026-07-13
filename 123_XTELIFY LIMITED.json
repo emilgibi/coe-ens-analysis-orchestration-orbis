@@ -1,0 +1,165 @@
+{
+  "date": "8th July, 2026",
+  "risk_level": "High",
+  "summary_of_findings": "The risk assessment for XTELIFY LIMITED shows high overall risk, notable government relationship extent linked with critical political connection risks potentially complicating government contracting. The evaluation also highlights mid-level economic indicators weakening revenue forecasts. Our evaluation also notes our analysis reveals moderate risk in cyber resilience capabilities. The assessment results call for specialized monitoring and comprehensive risk reporting.",
+  "sanctions_summary": [
+    "No notable sanction findings for the entity."
+  ],
+  "anti_summary": [
+    "No notable Bribery, Corruption, or Fraud findings for this entity."
+  ],
+  "gov_summary": [
+    "Group / Global Ultimate Owner not found to be state-controlled",
+    "There are 1 PEP findings for the individuals associated with this entity. Some of the most recent PEP events include:\n- Mr Soumen Ray: Potential Political Exposure Findings\n"
+  ],
+  "financial_summary": [
+    "Current Ratio: Medium (0.86)"
+  ],
+  "adv_summary": [
+    "No adverse media findings."
+  ],
+  "additional_indicators_summary": [
+    "There are notable findings in cybersecurity screening/profiling for this entity."
+  ],
+  "ral_summary": [
+    "No legal or regulatory findings available."
+  ],
+  "gov_rating": "High",
+  "anti_rating": "No Alerts",
+  "regulatory_and_legal_rating": "Deactivated",
+  "adv_rating": "Low",
+  "financial_rating": "Medium",
+  "additional_indicators_rating": "Medium",
+  "esg_rating": "No Alerts",
+  "cyber_rating": "Medium",
+  "sanctions_rating": "No Alerts",
+  "entity_existence_rating": "Medium",
+  "name": "XTELIFY LIMITED",
+  "google_image_name": "IN0014693894_574",
+  "location": "GURGAON, India",
+  "address": "AIRTEL CENTRE, PLOT NO. 16, UDYOG VIHAR, PHASE-IV, 122015, GURGAON, India",
+  "website": "www.airtel.in",
+  "active_status": "Active",
+  "operation_type": "Publicly quoted",
+  "legal_status": "Public limited companies",
+  "national_id": "VAT/Tax number: AABCW6047M",
+  "alias": "N/A",
+  "incorporation_date": "13/01/2015",
+  "subsidiaries": "1 entities",
+  "corporate_group": "166 entities",
+  "shareholders": "Other minority shareholders n.a.",
+  "key_exec": "\n 13 previous key executives",
+  "revenue": "428M (USD - 2025-03-31)",
+  "employee_count": "N/A",
+  "external_vendor_id": "test_AABCW6047M",
+  "uploaded_name": "XTELIFY LIMITED",
+  "annexure": [
+    {
+      "id": "1",
+      "title": "Full List of Shareholders",
+      "contents": "1. BHARTI AIRTEL LIMITED\n2. BHARTI ENTERPRISES (HOLDING) PRIVATE LIMITED"
+    },
+    {
+      "id": "2",
+      "title": "Key Management Personnel",
+      "contents": "Current Key Executives\n\n\n1. Mr Pradipt Kapoor - n.a\n2. Ms Nidhi Lauria - n.a\n3. Mr Soumen Ray - n.a\n4. Mr Pankaj Tewari - n.a\n5. Mr Badal Bagri - n.a\n6. Mr Srikanth Balachandran - n.a\n7. Mr Sameer Batra - n.a\n8. Mr Srinivasan Gopalan - n.a\n9. Ajeeta Kahale - n.a\n10. Mr Adarsh Sreekumar Nair - n.a\n11. Mr Nilanjan Roy - n.a\n12. Ms Neha Sharma - n.a\n13. Mr Kartik Nitin Sheth - n.a"
+    }
+  ],
+  "entity_existence_findings": true,
+  "entity_existence_data": [
+    {
+      "kpi_area": "ADD",
+      "kpi_code": "ADD1A",
+      "kpi_flag": true,
+      "kpi_details": "[{\"factor\": \"Address\", \"value\": \"AIRTEL CENTRE, PLOT NO. 16, UDYOG VIHAR, PHASE-IV, 122015, GURGAON, India\"}, {\"factor\": \"Zone\", \"value\": \"Mixed\"}, {\"factor\": \"Reason\", \"value\": \"The area contains both commercial establishments (like offices and restaurants) and possible residential elements (indicated by schools and the presence of residential services).\"}]",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Google Address Validation",
+      "kpi_data": null
+    }
+  ],
+  "sanctions_findings": false,
+  "bribery_findings": false,
+  "corruption_findings": false,
+  "financial_findings": true,
+  "financial_data": [
+    {
+      "kpi_area": "BKR",
+      "kpi_code": "BKR5A",
+      "kpi_flag": true,
+      "kpi_details": "Current Ratio: Medium (0.86)",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Current Ratio",
+      "kpi_data": [
+        "Current Ratio: Medium (0.86)"
+      ]
+    }
+  ],
+  "sown_findings": true,
+  "sown_data": [
+    {
+      "kpi_area": "PEP",
+      "kpi_code": "PEP1B",
+      "kpi_flag": true,
+      "kpi_details": "Following PeP findings :\n1. Mr Soumen Ray (n.a Key Executive - n.a): Potential Political Exposure Findings\n",
+      "kpi_rating": "High",
+      "kpi_definition": "PeP for Direct Affiliations -  Person Level",
+      "kpi_data": [
+        "Mr Soumen Ray (n.a Key Executive - n.a): Potential Political Exposure Findings"
+      ]
+    }
+  ],
+  "corporate_ownership_findings": false,
+  "adv_findings": true,
+  "adv_data": [
+    {
+      "kpi_area": "NWS",
+      "kpi_code": "NWS2A",
+      "kpi_flag": true,
+      "kpi_details": "Name: XTELIFY LIMITED\nRating: 4.3\nNumber of Reviews: 2060\n\n\nReviews:\n\t1. Name: Lakshay Nagpal | Rating: 5\nLarge Lively Office with soothing music of fountain water falling on ground. Really neat and clean office. Staff very polite and cooperative. Subway, easyday and whatnot are already there in their cafeteria.\n\n\t2. Name: Sandeep K | Rating: 5\nA wonderful office at Gurgaon where all the Airtel subsidiary companies are located. Very spacious office with a lot of coffee points, a lot is space for fresh air. Also a lot of conference & meeting halls\n\n\t3. Name: Shikha Yadav | Rating: 1\nOn 7th Aug, I made the mistake of trusting Airtel for WiFi. Same day, I got a call from one \u201cmahaan aurat\u201d from their side \u2014 maybe customer service, maybe sales, but definitely an expert in ego management.\n\nShe promised, \u201cWe\u2019ll try today, otherwise tomorrow morning for sure.\u201d I kept explaining how urgent it was \u2014 my whole family\u2019s work-from-home was on hold. Even a late-night installation was fine for me. But this mahaan aurat clearly decided that since I wasn\u2019t blindly agreeing to her every word, she would simply cut the call in the middle of the conversation.\n\nJust like that. No care, no patience \u2014 only ego satisfaction.\n\nNow it\u2019s 9th Aug \u2014 3 days later \u2014 Airtel has my money, I still have no WiFi, no update. But I\u2019m sure the mahaan aurat is sleeping peacefully, proud of the fact that she delayed a customer\u2019s work just to protect her own ego.\n\nIf Airtel\u2019s priority is to hire such mahaan people instead of delivering service, then congratulations \u2014 mission accomplished.\n\nCase details for Airtel to identify (if it matters) :\n\u2022Registered under: Deependra Yadav\n\u2022Registered mobile no. ending: 4032 / 1141\n\u2022\tRequest date: 07 Aug 2025\n\u2022\tLocation: Sector 102, Gurgaon\n\u2022\tConnection type: Airtel Xstream Fiber\nLead id - 21-131742280915\nOrder date- 07/08/2025\n\n\t4. Name: Kartik Misra | Rating: 1\nBeen trying to get a sim card replacement for my father who is unwell and bed ridden.. and cannot come to the store. Have even shared his medical documents, Airtel has no exception to cater for this for a home visit to issue a sim card. I am even ready to pay for the inconvenience.\n\nBut in the land where we can get 10min delivery.. I have been following for 45 days with Airtel, and still no resolution after promises.\n\n\t5. Name: Ankit kumar Sharma | Rating: 5\nVery very nice in dor aria\n\n",
+      "kpi_rating": "Low",
+      "kpi_definition": "Google Rating Validation",
+      "kpi_data": null
+    }
+  ],
+  "reg_findings": false,
+  "leg_findings": false,
+  "additional_indicators_findings": true,
+  "additional_indicators_data": [
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1A",
+      "kpi_flag": true,
+      "kpi_details": "High Cyber Risk Rating: 650",
+      "kpi_rating": "High",
+      "kpi_definition": "Cyber Risk Rating Score",
+      "kpi_data": [
+        "High Cyber Risk Rating: 650"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1B",
+      "kpi_flag": true,
+      "kpi_details": "High Implied Cyber Risk",
+      "kpi_rating": "High",
+      "kpi_definition": "Implied Cyber Risk Rating Score",
+      "kpi_data": [
+        "High Implied Cyber Risk"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB2A",
+      "kpi_flag": true,
+      "kpi_details": "Final Cyber Risk Rating: High",
+      "kpi_rating": "High",
+      "kpi_definition": "Overall Cyber Risk Rating",
+      "kpi_data": [
+        "Final Cyber Risk Rating: High"
+      ]
+    }
+  ],
+  "session_id": "d9462ce2-ee33-465e-a9e3-a79ad471edd3",
+  "ens_id": "7fbccb6d-6747-4728-b79b-32fb6ea8a9d4",
+  "disable-regulator-and-legal": true
+}

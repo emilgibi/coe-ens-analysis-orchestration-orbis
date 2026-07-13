@@ -1,0 +1,168 @@
+{
+  "date": "7th July, 2026",
+  "risk_level": "High",
+  "summary_of_findings": "STATE GRID CORPORATION OF CHINA presents an high overall risk profile, prominent government relationship extent paired with major economic restrictions exposure constraining financial transactions, while significant politically exposed person connections in addition to medium corporate image status tarnishing industry standing. The risk assessment also detected balanced controversial news presence along with standard fraud risk management undermining ethical standards. Additional indicators shows, our research could not verify an official web presence for this supplier. Moreover, our examination found notable cyber vulnerability indicators requiring oversight. The findings indicate a need for significant risk reduction strategies and close oversight.",
+  "sanctions_summary": [
+    "There are 1 sanction events for the organisation. The findings have been since 2024. Some of the most recent sanctions events include:\n- In 2024, State Grid Corporation of China: Chinanews.com listed an article on 24 June 2024, re: Shan Yecai, Assistant to the General Manager of State Grid Corporation of China was under investigation for violation of law and regulations.\n"
+  ],
+  "anti_summary": [
+    "There are 1 Bribery, Corruption, or Fraud findings for the organisation. The findings has been since 2016. Some of the most recent findings include:\n- In 2016, Legal.people.com.cn listed an article on 18 January 2016, re: Deng Yonghui, former party secretary of State Grid Corporation of China was sentenced to 10 years in jail for taking 4,560,000 Yuan RMB bribes.\n"
+  ],
+  "gov_summary": [
+    "Group / Global Ultimate Owner not found to be state-controlled",
+    "There are 1 PEP findings for the organisation. Some of the most recent PEP events include:\n- In 2026, State Grid Corporation of China: On List [PEP Connect - China]\n"
+  ],
+  "financial_summary": [
+    "No financials available."
+  ],
+  "adv_summary": [
+    "No adverse media findings."
+  ],
+  "additional_indicators_summary": [
+    "There are notable findings in cybersecurity screening/profiling for this entity.",
+    "There are notable findings in website screening/profiling for this entity."
+  ],
+  "ral_summary": [
+    "No legal or regulatory findings available."
+  ],
+  "gov_rating": "High",
+  "anti_rating": "Medium",
+  "regulatory_and_legal_rating": "Deactivated",
+  "adv_rating": "Medium",
+  "financial_rating": "No Alerts",
+  "additional_indicators_rating": "Medium",
+  "esg_rating": "No Alerts",
+  "cyber_rating": "Medium",
+  "sanctions_rating": "High",
+  "entity_existence_rating": "Medium",
+  "name": "STATE GRID CORPORATION OF CHINA",
+  "google_image_name": "CN*110344429418_575",
+  "location": "BEIJING, China",
+  "address": "NO. 86, WEST CHANG'AN STREET, XICHENG DISTRICT, 100031, BEIJING, China",
+  "website": "N/A",
+  "active_status": "Status unknown",
+  "operation_type": "Private",
+  "legal_status": "Companies with unknown/unrecorded legal form",
+  "national_id": "N/A",
+  "alias": "N/A",
+  "incorporation_date": "N/A",
+  "subsidiaries": "N/A",
+  "corporate_group": "N/A",
+  "shareholders": "N/A",
+  "key_exec": "N/A",
+  "revenue": "N/A",
+  "employee_count": "N/A",
+  "external_vendor_id": "test_9111000071093123XX",
+  "uploaded_name": "State Grid Corporation of China",
+  "annexure": [],
+  "entity_existence_findings": true,
+  "entity_existence_data": [
+    {
+      "kpi_area": "ADD",
+      "kpi_code": "ADD1A",
+      "kpi_flag": true,
+      "kpi_details": "[{\"factor\": \"Address\", \"value\": \"NO. 86, WEST CHANG'AN STREET, XICHENG DISTRICT, 100031, BEIJING, China\"}, {\"factor\": \"Zone\", \"value\": \"Mixed\"}, {\"factor\": \"Reason\", \"value\": \"The presence of a variety of commercial establishments like supermarkets, clothing stores, and restaurants alongside other potential residential areas indicates a mixed-use zone.\"}]",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Google Address Validation",
+      "kpi_data": null
+    }
+  ],
+  "sanctions_findings": true,
+  "sape_data": [
+    {
+      "kpi_area": "SAN",
+      "kpi_code": "SAN1A",
+      "kpi_flag": true,
+      "kpi_details": "Following sanctions imposed :\n1. As of [2024-06-24 00:00:00]:  State Grid Corporation of China Regulatory Action - Associated with, Seen with: \n Chinanews.com listed an article on 24 June 2024, re: Shan Yecai, Assistant to the General Manager of State Grid Corporation of China was under investigation for violation of law and regulations.\n",
+      "kpi_rating": "High",
+      "kpi_definition": "Sanctions for Direct Affiliations - Organisation Level",
+      "kpi_data": [
+        "As of [2024-06-24 00:00:00]:  State Grid Corporation of China Regulatory Action - Associated with, Seen with: \n Chinanews.com listed an article on 24 June 2024, re: Shan Yecai, Assistant to the General Manager of State Grid Corporation of China was under investigation for violation of law and regulations."
+      ]
+    }
+  ],
+  "bribery_findings": true,
+  "bribery_data": [
+    {
+      "kpi_area": "BCF",
+      "kpi_code": "BCF1A",
+      "kpi_flag": true,
+      "kpi_details": "Risk identified due to the following events:\n1. Bribery, Graft, Kickbacks, Political Corruption: Associated with, Seen with - Legal.people.com.cn listed an article on 18 January 2016, re: Deng Yonghui, former party secretary of State Grid Corporation of China was sentenced to 10 years in jail for taking 4,560,000 Yuan RMB bribes. (Date: 2016-01-18)\n",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Bribery, Corruption or Fraud - Organization Level",
+      "kpi_data": [
+        "Bribery, Graft, Kickbacks, Political Corruption: Associated with, Seen with - Legal.people.com.cn listed an article on 18 January 2016, re: Deng Yonghui, former party secretary of State Grid Corporation of China was sentenced to 10 years in jail for taking 4,560,000 Yuan RMB bribes. (Date: 2016-01-18)"
+      ]
+    }
+  ],
+  "corruption_findings": false,
+  "financial_findings": false,
+  "sown_findings": true,
+  "sown_data": [
+    {
+      "kpi_area": "PEP",
+      "kpi_code": "PEP1A",
+      "kpi_flag": true,
+      "kpi_details": "Following PeP or Association with State Owned Companies findings :\n1. As of [2026-05-15 00:00:00]:  State Grid Corporation of China: On List [PEP Connect - China]\n",
+      "kpi_rating": "High",
+      "kpi_definition": "PeP for Direct Affiliations - Organisation Level",
+      "kpi_data": [
+        "As of [2026-05-15 00:00:00]:  State Grid Corporation of China: On List [PEP Connect - China]"
+      ]
+    }
+  ],
+  "corporate_ownership_findings": false,
+  "adv_findings": true,
+  "adv_data": [
+    {
+      "kpi_area": "NWS",
+      "kpi_code": "NWS2A",
+      "kpi_flag": true,
+      "kpi_details": "Name: STATE GRID CORPORATION OF CHINA\nRating: 3.3\nNumber of Reviews: 3\n\n\nReviews:\n\t1. Name: FKaan G\u00dcNG\u00d6R | Rating: 4\n\n\n\t2. Name: Omar Amjad Abdelwhab Ashayer 11e | Rating: 1\n\n\n\t3. Name: Rizwan Malik | Rating: 5\n\n\n",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Google Rating Validation",
+      "kpi_data": null
+    }
+  ],
+  "reg_findings": false,
+  "leg_findings": false,
+  "additional_indicators_findings": true,
+  "additional_indicators_data": [
+    {
+      "kpi_area": "WEB",
+      "kpi_code": "WEB1A",
+      "kpi_flag": true,
+      "kpi_details": "No website found for the organization",
+      "kpi_rating": "INFO",
+      "kpi_definition": "Website Absence",
+      "kpi_data": [
+        "No website found for the organization"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1B",
+      "kpi_flag": true,
+      "kpi_details": "High Implied Cyber Risk",
+      "kpi_rating": "High",
+      "kpi_definition": "Implied Cyber Risk Rating Score",
+      "kpi_data": [
+        "High Implied Cyber Risk"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB2A",
+      "kpi_flag": true,
+      "kpi_details": "Final Cyber Risk Rating: High (Based on Implied Risk)",
+      "kpi_rating": "High",
+      "kpi_definition": "Overall Cyber Risk Rating",
+      "kpi_data": [
+        "Final Cyber Risk Rating: High (Based on Implied Risk)"
+      ]
+    }
+  ],
+  "session_id": "d1a741b0-c8b1-4368-9048-a72f7e085e77",
+  "ens_id": "477005fb-f068-48be-be6c-fa4db73f513e",
+  "disable-regulator-and-legal": true
+}

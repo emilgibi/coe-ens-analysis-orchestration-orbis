@@ -1,0 +1,136 @@
+{
+  "date": "6th July, 2026",
+  "risk_level": "Medium",
+  "summary_of_findings": "LEGIST INTELLECTUAL PROPERTY RIGHTS SERVICES LIMITED has been assessed with medium risk in our evaluation, the supplier shows moderate concerns in their cybersecurity implementation strategies. The identified risks suggest implementing moderate control mechanisms.",
+  "sanctions_summary": [
+    "No notable sanction findings for the entity."
+  ],
+  "anti_summary": [
+    "No notable Bribery, Corruption, or Fraud findings for this entity."
+  ],
+  "gov_summary": [
+    "Group / Global Ultimate Owner not found to be state-controlled",
+    "No PEP findings for the individual."
+  ],
+  "financial_summary": [
+    "Current Ratio: Low (2.71)"
+  ],
+  "adv_summary": [
+    "No adverse media findings."
+  ],
+  "additional_indicators_summary": [
+    "There are notable findings in cybersecurity screening/profiling for this entity."
+  ],
+  "ral_summary": [
+    "No legal or regulatory findings available."
+  ],
+  "gov_rating": "No Alerts",
+  "anti_rating": "No Alerts",
+  "regulatory_and_legal_rating": "Deactivated",
+  "adv_rating": "Low",
+  "financial_rating": "Low",
+  "additional_indicators_rating": "Medium",
+  "esg_rating": "No Alerts",
+  "cyber_rating": "Medium",
+  "sanctions_rating": "No Alerts",
+  "entity_existence_rating": "Medium",
+  "name": "LEGIST INTELLECTUAL PROPERTY RIGHTS SERVICES LIMITED",
+  "google_image_name": "IN0007495075_679",
+  "location": "DELHI, India",
+  "address": "E-1, LAJPAT NAGAR-III, 110024, DELHI, India",
+  "website": "www.thelegist.com",
+  "active_status": "Active",
+  "operation_type": "Publicly quoted",
+  "legal_status": "Public limited companies",
+  "national_id": "VAT/Tax number: AACCL0948H",
+  "alias": "N/A",
+  "incorporation_date": "17/08/2011",
+  "subsidiaries": "N/A",
+  "corporate_group": "N/A",
+  "shareholders": "N/A",
+  "key_exec": "\n 5 previous key executives",
+  "revenue": "215,171 (USD - 2025-03-31)",
+  "employee_count": "N/A",
+  "external_vendor_id": "test_AACCL0948H",
+  "uploaded_name": "LEGIST INTELLECTUAL PROPERTY RIGHTS SERVICES LIMITED",
+  "annexure": [
+    {
+      "id": "2",
+      "title": "Key Management Personnel",
+      "contents": "Current Key Executives\n\n\n1. Mr Narendra Singh - n.a\n2. Mr Radhe Shyam Yadav - n.a\n3. Sarita - n.a\n4. Mr Abhishek Singh - n.a\n5. Mr Sujeet Kumar Gupta - n.a"
+    }
+  ],
+  "entity_existence_findings": true,
+  "entity_existence_data": [
+    {
+      "kpi_area": "DOM",
+      "kpi_code": "DOM1A",
+      "kpi_flag": true,
+      "kpi_details": "[{\"Factor\": \"Domain Name\", \"Value\": \"thelegist.com\"}, {\"Factor\": \"Creation Date\", \"Value\": \"13-09-2006\"}, {\"Factor\": \"Expiration Date\", \"Value\": \"13-09-2033\"}, {\"Factor\": \"Updated Date\", \"Value\": \"15-06-2024\"}, {\"Factor\": \"Registrant Org\", \"Value\": \"\"}, {\"Factor\": \"Registrant Country\", \"Value\": \"\"}, {\"Factor\": \"Registrar\", \"Value\": \"godaddy.com, llc\"}, {\"Factor\": \"Registrar Url\", \"Value\": \"http://www.godaddy.com\"}, {\"Factor\": \"Emails\", \"Value\": \"\"}, {\"Factor\": \"Dnssec\", \"Value\": \"unsigned\"}, {\"Factor\": \"Vendor Onboarding Date (Client Database)\", \"Value\": \"\"}]",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Domain Validation",
+      "kpi_data": null
+    }
+  ],
+  "sanctions_findings": false,
+  "bribery_findings": false,
+  "corruption_findings": false,
+  "financial_findings": true,
+  "financial_data": [
+    {
+      "kpi_area": "BKR",
+      "kpi_code": "BKR5A",
+      "kpi_flag": true,
+      "kpi_details": "Current Ratio: Low (2.71)",
+      "kpi_rating": "Low",
+      "kpi_definition": "Current Ratio",
+      "kpi_data": [
+        "Current Ratio: Low (2.71)"
+      ]
+    }
+  ],
+  "sown_findings": false,
+  "corporate_ownership_findings": false,
+  "adv_findings": true,
+  "adv_data": [
+    {
+      "kpi_area": "NWS",
+      "kpi_code": "NWS2A",
+      "kpi_flag": true,
+      "kpi_details": "Name: LEGIST INTELLECTUAL PROPERTY RIGHTS SERVICES LIMITED\nRating: 4.4\nNumber of Reviews: 18\n\n\nReviews:\n\t1. Name: Richa Sharma | Rating: 3\nThey provide consultations for civil suits whereas their charges are high and stretch the case for long as lawyers are into profession which must bring justice but not here\n\n\t2. Name: Shyam Sundar Znwar | Rating: 4\nExperts in IP related litigation.\n\n\t3. Name: HumanNet pkj | Rating: 4\nProfessional team of lawyer\n\n\t4. Name: SHUBHESHWARAM | Rating: 4\nCan't say\n\n\t5. Name: sidharth gautam | Rating: 5\n\n\n",
+      "kpi_rating": "Low",
+      "kpi_definition": "Google Rating Validation",
+      "kpi_data": null
+    }
+  ],
+  "reg_findings": false,
+  "leg_findings": false,
+  "additional_indicators_findings": true,
+  "additional_indicators_data": [
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1B",
+      "kpi_flag": true,
+      "kpi_details": "High Implied Cyber Risk",
+      "kpi_rating": "High",
+      "kpi_definition": "Implied Cyber Risk Rating Score",
+      "kpi_data": [
+        "High Implied Cyber Risk"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB2A",
+      "kpi_flag": true,
+      "kpi_details": "Final Cyber Risk Rating: High (Based on Implied Risk)",
+      "kpi_rating": "High",
+      "kpi_definition": "Overall Cyber Risk Rating",
+      "kpi_data": [
+        "Final Cyber Risk Rating: High (Based on Implied Risk)"
+      ]
+    }
+  ],
+  "session_id": "16a09b04-2385-4a6b-b337-94bb6a22c7a1",
+  "ens_id": "9d0dfe15-ee59-4d98-bce0-83d8d92095c3",
+  "disable-regulator-and-legal": true
+}

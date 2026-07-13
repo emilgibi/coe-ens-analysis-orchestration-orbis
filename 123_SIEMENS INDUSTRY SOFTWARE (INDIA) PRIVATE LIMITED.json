@@ -1,0 +1,190 @@
+{
+  "date": "8th July, 2026",
+  "risk_level": "High",
+  "summary_of_findings": "Our vendor assessment shows that SIEMENS INDUSTRY SOFTWARE (INDIA) PRIVATE LIMITED represents high risk exposure, major public perception challenges paired with critical negative publicity documented in public records. Furthermore, the assessment identified considerable ethical standards implementation combined with elevated sanction violation risks affecting global business activities. Beyond this, our evaluation found middling financial stability raising solvency questions. Additional assessment reveals the evaluation discovered notable concerns in information security practices. The findings indicate a need for significant risk reduction strategies and close oversight.",
+  "sanctions_summary": [
+    "There are 1 potential sanctions findings within the corporate group."
+  ],
+  "anti_summary": [
+    "There are 2 Bribery, Corruption, or Fraud findings for the organisation. The findings has been since 2023. Some of the most recent findings include:\n- In 2023, ED chargesheets four in Rs 370 crore Andhra skill development scam.The central agency has accused them of embezzling about 370 crore meant for skill development. The prosecution complaint has been filed against Soumyadri Shekhar Bose, former managing director of Siemens [...]\n- In 2023, ED has arrested four people in connection with its money laundering probe into the alleged diversion of government funds meant for skilling youths in using advanced software. Soumyadri Shekhar Bose alias Suman Bose, former managing director ( MD) of Siemens [...]\n"
+  ],
+  "gov_summary": [
+    "Group / Global Ultimate Owner not found to be state-controlled",
+    "No PEP findings for the individual."
+  ],
+  "financial_summary": [
+    "Current Ratio: Medium (1.16)"
+  ],
+  "adv_summary": [
+    "There are 1 adverse media criminal activity findings for this organization. The findings have been since 2023. Some of the most recent media events include: \n- In 2023, ED chargesheets four in Rs 370 crore Andhra skill development scam.The central agency has accused them of embezzling about 370 crore meant for skill development. The prosecution complaint has been filed against Soumyadri Shekhar Bose, former managing director of Siemens [...]\n"
+  ],
+  "additional_indicators_summary": [
+    "There are notable findings in cybersecurity screening/profiling for this entity."
+  ],
+  "ral_summary": [
+    "No legal or regulatory findings available."
+  ],
+  "gov_rating": "No Alerts",
+  "anti_rating": "High",
+  "regulatory_and_legal_rating": "Deactivated",
+  "adv_rating": "High",
+  "financial_rating": "Medium",
+  "additional_indicators_rating": "Medium",
+  "esg_rating": "No Alerts",
+  "cyber_rating": "Medium",
+  "sanctions_rating": "High",
+  "entity_existence_rating": "Medium",
+  "name": "SIEMENS INDUSTRY SOFTWARE (INDIA) PRIVATE LIMITED",
+  "google_image_name": "IN0001393547_756",
+  "location": "DELHI, India",
+  "address": "FIRST & SECOND FLOOR, NO. E-20, HAUZ KHAS, 110016, DELHI, India",
+  "website": "www.siemens.com",
+  "active_status": "Active",
+  "operation_type": "Private",
+  "legal_status": "Private limited companies",
+  "national_id": "VAT/Tax number: AABCS7638E",
+  "alias": "N/A",
+  "incorporation_date": "08/06/1998",
+  "subsidiaries": "2 entities",
+  "corporate_group": "1430 entities",
+  "shareholders": "SIEMENS INDUSTRY SOFTWARE NETHERLANDS B.V. (100.00%)",
+  "key_exec": "\n 8 previous key executives",
+  "revenue": "335M (USD - 2025-03-31)",
+  "employee_count": "N/A",
+  "external_vendor_id": "test_AABCS7638E",
+  "uploaded_name": "Siemens Industry Software (India)",
+  "annexure": [
+    {
+      "id": "1",
+      "title": "Full List of Shareholders",
+      "contents": "\n\nDirect Shareholders\n\n\n1. SIEMENS INDUSTRY SOFTWARE NETHERLANDS B.V. (100.00%)\n\n\n\nOther Shareholders\n\n\n1. SIEMENS AG\n2. SIEMENS INDUSTRY SOFTWARE\n3. SIEMENS INDUSTRY SOFTWARE LIMITED"
+    },
+    {
+      "id": "2",
+      "title": "Key Management Personnel",
+      "contents": "Current Key Executives\n\n\n1. Mr Sridhar Subramaniam - n.a\n2. Mr Mathew Thomas - n.a\n3. Khattak Kochhar and Co. - n.a\n4. Mr Ashish Bhat - n.a\n5. Suprakash Chaudhuri - n.a\n6. Mr Bhaskar Mandal - n.a\n7. Mr Ashish Brij Mishra - n.a\n8. Ms Soumyadri Shekhar Bose - n.a"
+    }
+  ],
+  "entity_existence_findings": true,
+  "entity_existence_data": [
+    {
+      "kpi_area": "ADD",
+      "kpi_code": "ADD1A",
+      "kpi_flag": true,
+      "kpi_details": "[{\"factor\": \"Address\", \"value\": \"FIRST & SECOND FLOOR, NO. E-20, HAUZ KHAS, 110016, DELHI, India\"}, {\"factor\": \"Zone\", \"value\": \"Mixed\"}, {\"factor\": \"Reason\", \"value\": \"The area has a combination of residential properties and various businesses, including banks, shops, and health services.\"}]",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Google Address Validation",
+      "kpi_data": null
+    },
+    {
+      "kpi_area": "DOM",
+      "kpi_code": "DOM1A",
+      "kpi_flag": true,
+      "kpi_details": "[{\"Factor\": \"Domain Name\", \"Value\": \"siemens.com\"}, {\"Factor\": \"Creation Date\", \"Value\": \"29-09-1986\"}, {\"Factor\": \"Expiration Date\", \"Value\": \"28-09-2026\"}, {\"Factor\": \"Updated Date\", \"Value\": \"19-11-2025\"}, {\"Factor\": \"Registrant Org\", \"Value\": \"\"}, {\"Factor\": \"Registrant Country\", \"Value\": \"\"}, {\"Factor\": \"Registrar\", \"Value\": \"csc corporate domains, inc.\"}, {\"Factor\": \"Registrar Url\", \"Value\": \"http://cscdbs.com\"}, {\"Factor\": \"Emails\", \"Value\": \"\"}, {\"Factor\": \"Dnssec\", \"Value\": \"signeddelegation\"}, {\"Factor\": \"Vendor Onboarding Date (Client Database)\", \"Value\": \"\"}]",
+      "kpi_rating": "Low",
+      "kpi_definition": "Domain Validation",
+      "kpi_data": null
+    }
+  ],
+  "sanctions_findings": true,
+  "sape_data": [
+    {
+      "kpi_area": "SAN",
+      "kpi_code": "SAN3A",
+      "kpi_flag": true,
+      "kpi_details": "Sanctions or watchlist exposure identified among following members of the corporate group:\n1. Global Ultimate Owner: SIEMENS AG  - Sanctions/Watchlist exposure\n",
+      "kpi_rating": "High",
+      "kpi_definition": "Associated Corporate Group - Sanctions Exposure",
+      "kpi_data": [
+        "Global Ultimate Owner: SIEMENS AG  - Sanctions/Watchlist exposure"
+      ]
+    }
+  ],
+  "bribery_findings": true,
+  "bribery_data": [
+    {
+      "kpi_area": "BCF",
+      "kpi_code": "BCF1A",
+      "kpi_flag": true,
+      "kpi_details": "Risk identified due to the following events:\n1. Money Laundering: Associated with, Seen with - ED chargesheets four in Rs 370 crore Andhra skill development scam.The central agency has accused them of embezzling about 370 crore meant for skill development. The prosecution complaint has been filed against Soumyadri Shekhar Bose, former managing director of Siemens [...] (Date: 2023-05-09)\n2. Money Laundering: Associated with, Seen with - ED has arrested four people in connection with its money laundering probe into the alleged diversion of government funds meant for skilling youths in using advanced software. Soumyadri Shekhar Bose alias Suman Bose, former managing director ( MD) of Siemens [...] (Date: 2023-03-14)\n",
+      "kpi_rating": "High",
+      "kpi_definition": "Bribery, Corruption or Fraud - Organization Level",
+      "kpi_data": [
+        "Money Laundering: Associated with, Seen with - ED chargesheets four in Rs 370 crore Andhra skill development scam.The central agency has accused them of embezzling about 370 crore meant for skill development. The prosecution complaint has been filed against Soumyadri Shekhar Bose, former managing director of Siemens [...] (Date: 2023-05-09)",
+        "Money Laundering: Associated with, Seen with - ED has arrested four people in connection with its money laundering probe into the alleged diversion of government funds meant for skilling youths in using advanced software. Soumyadri Shekhar Bose alias Suman Bose, former managing director ( MD) of Siemens [...] (Date: 2023-03-14)"
+      ]
+    }
+  ],
+  "corruption_findings": false,
+  "financial_findings": true,
+  "financial_data": [
+    {
+      "kpi_area": "BKR",
+      "kpi_code": "BKR5A",
+      "kpi_flag": true,
+      "kpi_details": "Current Ratio: Medium (1.16)",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Current Ratio",
+      "kpi_data": [
+        "Current Ratio: Medium (1.16)"
+      ]
+    }
+  ],
+  "sown_findings": false,
+  "corporate_ownership_findings": false,
+  "adv_findings": true,
+  "adv_data": [
+    {
+      "kpi_area": "AMO",
+      "kpi_code": "AMO1A",
+      "kpi_flag": true,
+      "kpi_details": "Criminal activity discovered: \n1. Theft (Larceny, Misappropriation, Embezzlement, Extortion): Associated with, Seen with - ED chargesheets four in Rs 370 crore Andhra skill development scam.The central agency has accused them of embezzling about 370 crore meant for skill development. The prosecution complaint has been filed against Soumyadri Shekhar Bose, former managing director of Siemens [...] (Date: 2023-05-09 00:00:00) \n",
+      "kpi_rating": "High",
+      "kpi_definition": "Adverse Media for Other Criminal Activities - Organization Level",
+      "kpi_data": [
+        "Theft (Larceny, Misappropriation, Embezzlement, Extortion): Associated with, Seen with - ED chargesheets four in Rs 370 crore Andhra skill development scam.The central agency has accused them of embezzling about 370 crore meant for skill development. The prosecution complaint has been filed against Soumyadri Shekhar Bose, former managing director of Siemens [...] (Date: 2023-05-09 00:00:00) "
+      ]
+    }
+  ],
+  "reg_findings": false,
+  "leg_findings": false,
+  "additional_indicators_findings": true,
+  "additional_indicators_data": [
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1A",
+      "kpi_flag": true,
+      "kpi_details": "High Cyber Risk Rating: 490",
+      "kpi_rating": "High",
+      "kpi_definition": "Cyber Risk Rating Score",
+      "kpi_data": [
+        "High Cyber Risk Rating: 490"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1B",
+      "kpi_flag": true,
+      "kpi_details": "High Implied Cyber Risk",
+      "kpi_rating": "High",
+      "kpi_definition": "Implied Cyber Risk Rating Score",
+      "kpi_data": [
+        "High Implied Cyber Risk"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB2A",
+      "kpi_flag": true,
+      "kpi_details": "Final Cyber Risk Rating: High",
+      "kpi_rating": "High",
+      "kpi_definition": "Overall Cyber Risk Rating",
+      "kpi_data": [
+        "Final Cyber Risk Rating: High"
+      ]
+    }
+  ],
+  "session_id": "d9462ce2-ee33-465e-a9e3-a79ad471edd3",
+  "ens_id": "4de90b95-f301-4e4a-9ec7-93c707838152",
+  "disable-regulator-and-legal": true
+}

@@ -1,0 +1,1713 @@
+from fastapi import Depends, HTTPException
+from sqlalchemy import and_, bindparam, case, func, literal_column, text, update, desc, join
+from sqlalchemy.exc import SQLAlchemyError
+from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy.future import select
+from app.models import *
+from app.api import deps
+from sqlalchemy.dialects.postgresql import insert
+
+from app.core.database_session import _ASYNC_ENGINE, SessionFactory
+
+from app.schemas.logger import logger
+
+# Update KPI to Dtabase
+# columns_data = {"kpi_area": "ESG","kpi_code": "ESG1C", "kpi_flag": False,"kpi_value": None,"kpi_details": ""}
+# async def update_dynamic_ens_data(table_name: str, columns_data: dict, ens_id: str):
+
+
+from sqlalchemy.orm import aliased
+from sqlalchemy import select, and_
+
+async def get_join_dynamic_ens_data(
+    left_table_name: str,
+    right_table_name: str,
+    ens_id: str = None,
+    session_id: str = None,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        # Columns from left and right tables
+        x = [
+            "uploaded_name", "uploaded_name_international", "uploaded_address", "uploaded_postcode",
+            "uploaded_city", "uploaded_country", "uploaded_phone_or_fax", "uploaded_email_or_website",
+            "uploaded_national_id", "uploaded_state", "uploaded_address_type"
+        ]
+        y = [
+            "name", "name_international", "address", "postcode", "city", "country", "phone_or_fax",
+            "email_or_website", "national_id", "state"
+        ]
+
+        metadata = Base.metadata
+        left_table = metadata.tables.get(left_table_name)
+        right_table = metadata.tables.get(right_table_name)
+
+        if left_table is None or right_table is None:
+            raise ValueError("One or both table names are invalid.")
+
+        # Alias tables
+        left_alias = aliased(left_table)
+        right_alias = aliased(right_table)
+
+        # Join condition
+        join_condition = and_(
+            left_alias.c.session_id == right_alias.c.session_id,
+            left_alias.c.ens_id == right_alias.c.ens_id,
+        )
+        joined_table = left_alias.join(right_alias, join_condition)
+
+        # Select columns
+        columns_to_select = []
+        column_names = []
+
+        for col in x:
+            columns_to_select.append(left_alias.c[col])
+            column_names.append(f"left.{col}")
+        for col in y:
+            columns_to_select.append(right_alias.c[col])
+            column_names.append(f"right.{col}")
+
+        # Build query
+        query = select(*columns_to_select).select_from(joined_table)
+        query = query.where(left_alias.c.ens_id == str(ens_id))
+        query = query.where(left_alias.c.session_id == str(session_id))
+
+        # Execute query
+        result = await session.execute(query)
+        rows = result.fetchall()
+
+        # Convert to list of dicts
+        output = [dict(zip(column_names, row)) for row in rows]
+        await session.close()
+        return output
+
+    except Exception as e:
+        raise RuntimeError(f"Failed to fetch data: {e}")
+
+
+async def get_dynamic_ens_data(
+    table_name: str,
+    required_columns: list,
+    ens_id: str = None,
+    session_id: str = None,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(
+                f"Table '{table_name}' does not exist in the database schema."
+            )
+
+        # If "*" is passed, select all columns
+        if required_columns == ["all"]:
+            columns_to_select = [table_class.c[column] for column in table_class.c.keys()]
+        else:
+            columns_to_select = [getattr(table_class.c, column) for column in required_columns]
+
+        query = select(*columns_to_select)
+
+        # Apply filters only if the values are provided
+        if ens_id:
+            query = query.where(table_class.c.ens_id == str(ens_id)).distinct()
+        
+        if session_id:  # If session_id is None, do not apply any filter
+            query = query.where(table_class.c.session_id == str(session_id))
+
+        result = await session.execute(query)
+
+        columns = result.keys()
+        rows = result.all()
+
+        formatted_res = [dict(zip(columns, row)) for row in rows]
+
+        await session.close()
+        return formatted_res
+
+    except ValueError as ve:
+        logger.error(f"Error: {ve}")
+        return []
+
+    except SQLAlchemyError as sa_err:
+        logger.error(f"Database error: {sa_err}")
+        return []
+
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+        return []
+
+
+async def get_main_supplier_bvdid_data(
+    required_columns: list,
+    bvd_id: str = None,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+        table_class = Base.metadata.tables.get("supplier_master_data")
+        if table_class is None:
+            raise ValueError(
+                f"Table 'supplier_master_data' does not exist in the database schema."
+            )
+
+        # If "*" is passed, select all columns
+        if required_columns == ["all"]:
+            columns_to_select = [table_class.c[column] for column in table_class.c.keys()]
+        else:
+            columns_to_select = [getattr(table_class.c, column) for column in required_columns]
+
+        query = select(*columns_to_select)
+
+        # Apply filters only if the values are provided
+        if bvd_id:
+            query = query.where(table_class.c.bvd_id == str(bvd_id)).distinct()
+
+        result = await session.execute(query)
+
+        columns = result.keys()
+        rows = result.all()
+
+        formatted_res = [dict(zip(columns, row)) for row in rows]
+
+        await session.close()
+        return formatted_res
+
+    except ValueError as ve:
+        print(f"Error: {ve}")
+        return []
+
+    except SQLAlchemyError as sa_err:
+        print(f"Database error: {sa_err}")
+        return []
+
+    except Exception as e:
+        print(f"An unexpected error occurred: {e}")
+        return []
+
+
+
+
+async def update_dynamic_ens_data(
+    table_name: str,
+    columns_data: dict,
+    ens_id: str,
+    session_id: str,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    """
+    Update the specified table dynamically with the provided columns_data based on ens_id.
+
+    :param session: AsyncSession = Depends(deps.get_session) - The database session.
+    :param table_name: str - The name of the table to update.
+    :param columns_data: dict - The dictionary of KPI data to update.
+    :param ens_id: str - The ID to filter the record that needs to be updated.
+    :return: dict - The result of the update operation.
+    """
+    try:
+        session = SessionFactory()
+
+        # Get the table class dynamically
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(f"Table '{table_name}' does not exist in the database schema.")
+        
+        # Prepare the update values
+        update_values = {key: value for key, value in columns_data.items() if value is not None}
+        
+
+        # Initialize the base update query
+        query = update(table_class).values(update_values)
+
+        # Define conditions dynamically
+        conditions = []
+        if ens_id:
+            conditions.append(table_class.c.ens_id == str(ens_id))
+        if session_id:
+            conditions.append(table_class.c.session_id == str(session_id))
+
+        # Apply conditions if there are any
+        if conditions:
+            query = query.where(and_(*conditions))
+        
+        # Execute the query
+        result = await session.execute(query)
+        
+        # Commit the transaction
+        await session.commit()
+        
+        # Return success response
+        await session.close()
+        return {"status": "success", "message": "Data updated successfully."}
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return {"error": str(ve), "status": "failure"}
+    
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return {"error": "Database error", "status": "failure"}
+    
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(f"An unexpected error occurred: {e}")
+        return {"error": "An unexpected error occurred", "status": "failure"}
+
+async def insert_dynamic_ens_data(
+    table_name: str,
+    columns_data: list,
+    ens_id: str,
+    session_id: str,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        # Get the table class dynamically
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(f"Table '{table_name}' does not exist in the database schema.")
+        
+        # Add `ens_id` and `session_id` to each row in `columns_data`
+        rows_to_insert = [
+            {**row, "ens_id": ens_id, "session_id": session_id}
+            for row in columns_data
+        ]
+        
+        # Build the insert query
+        query = insert(table_class).values(rows_to_insert)
+        
+        # Execute the query
+        await session.execute(query)
+        
+        # Commit the transaction
+        await session.commit()
+        
+        # Return success response
+        await session.close()
+        return {"status": "success", "message": f"Inserted {len(rows_to_insert)} rows successfully."}
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return {"error": str(ve), "status": "failure"}
+    
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return {"error": "Database error", "status": "failure"}
+    
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(f"An unexpected error occurred: {e}")
+        return {"error": "An unexpected error occurred", "status": "failure"}
+
+async def upsert_dynamic_ens_data(
+    table_name: str,
+    columns_data: list,
+    ens_id: str,
+    session_id: str,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        # Get the table class dynamically
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(f"Table '{table_name}' does not exist in the database schema.")
+
+        # Add `ens_id` and `session_id` to each row in `columns_data`
+        rows_to_insert = [
+            {**row, "ens_id": ens_id, "session_id": session_id}
+            for row in columns_data
+        ]
+
+        # Build the UPSERT query (Insert with conflict handling)
+        query = insert(table_class).values(rows_to_insert).on_conflict_do_update(
+            index_elements=["ens_id", "session_id"],  # Conflict columns
+            set_={col: getattr(insert(table_class).excluded, col) for col in rows_to_insert[0].keys() if col not in ["ens_id", "session_id"]}
+        )
+
+        # Execute the query
+        await session.execute(query)
+
+        # Commit the transaction
+        await session.commit()
+        await session.close()
+
+        return {"status": "success", "message": f"Upserted {len(rows_to_insert)} rows successfully."}
+
+    except ValueError as ve:
+        logger.error(f"Error: {ve}")
+        return {"error": str(ve), "status": "failure"}
+
+    except SQLAlchemyError as sa_err:
+        logger.error(f"Database error: {sa_err}")
+        return {"error": "Database error", "status": "failure"}
+
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+        return {"error": "An unexpected error occurred", "status": "failure"}
+
+async def upsert_dynamic_ens_data_summary(
+    table_name: str,
+    columns_data: list,
+    ens_id: str,
+    session_id: str,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        # Get the table class dynamically
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(f"Table '{table_name}' does not exist in the database schema.")
+
+        # Add `ens_id` and `session_id` to each row in `columns_data`
+        rows_to_insert = [
+            {**row, "ens_id": ens_id, "session_id": session_id}
+            for row in columns_data
+        ]
+
+        # Build the UPSERT query (Insert with conflict handling)
+        query = insert(table_class).values(rows_to_insert).on_conflict_do_update(
+            index_elements=["ens_id", "session_id", "area"],  # Conflict columns
+            set_={col: getattr(insert(table_class).excluded, col) for col in rows_to_insert[0].keys() if col not in ["ens_id", "session_id", "area"]}
+        )
+
+        # Execute the query
+        await session.execute(query)
+
+        # Commit the transaction
+        await session.commit()
+        await session.close()
+
+        return {"status": "success", "message": f"Upserted {len(rows_to_insert)} rows successfully."}
+
+    except ValueError as ve:
+        logger.error(f"Error: {ve}")
+        return {"error": str(ve), "status": "failure"}
+
+    except SQLAlchemyError as sa_err:
+        logger.error(f"Database error: {sa_err}")
+        return {"error": "Database error", "status": "failure"}
+
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+        return {"error": "An unexpected error occurred", "status": "failure"}
+
+async def upsert_kpi(
+    table_name: str,
+    columns_data: list,
+    ens_id: str,
+    session_id: str,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        # kpi_code
+        
+        # Get the table class dynamically
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(f"Table '{table_name}' does not exist in the database schema.")
+
+        # Add ens_id and session_id to each record
+        for record in columns_data:
+            record["ens_id"] = ens_id
+            record["session_id"] = session_id
+
+        # Extract column names dynamically
+        columns = list(columns_data[0].keys())
+
+        # Prepare bulk insert statement using PostgreSQL ON CONFLICT
+        stmt = insert(table_class).values(columns_data)
+        stmt = stmt.on_conflict_do_update(
+            index_elements=["ens_id", "session_id", "kpi_code"],  # Unique constraint columns
+            set_={col: stmt.excluded[col] for col in columns if col not in ["ens_id", "session_id", "kpi_code"]}
+        ).returning(table_class)
+
+        # Execute bulk upsert
+        result = await session.execute(stmt)
+        await session.commit()
+
+        # Fetch the inserted/updated rows
+        await session.close()
+        return {"message": "Upsert completed", "data": result.fetchall(), "status": "success"}
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return {"error": str(ve), "status": "failure"}
+    
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return {"error": "Database error", "status": "failure"}
+    
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(f"An unexpected error occurred: {e}")
+        return {"error": "An unexpected error occurred", "status": "failure"}
+    
+
+
+async def upsert_ensid_screening_status(
+    columns_data: list,
+    session_id: str,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        # Get the table class dynamically
+        table_class = Base.metadata.tables.get('ensid_screening_status')
+        if table_class is None:
+            raise ValueError(f"Table 'ensid_screening_status' does not exist in the database schema.")
+
+        # Add ens_id and session_id to each record
+        for record in columns_data:
+            if 'ens_id' not in record:
+                raise ValueError(f"Missing 'ens_id' in record: {record}")
+            record["session_id"] = session_id
+
+        # Extract column names dynamically
+        columns = list(columns_data[0].keys())
+
+        # Prepare bulk insert statement using PostgreSQL ON CONFLICT
+        stmt = insert(table_class).values(columns_data)
+        stmt = stmt.on_conflict_do_update(
+            index_elements=["ens_id", "session_id"],  # Unique constraint columns
+            set_={col: stmt.excluded[col] for col in columns if col not in ["ens_id", "session_id"]}
+
+        ).returning(table_class)
+        # Execute bulk upsert
+        result = await session.execute(stmt)
+        await session.commit()
+
+        # Fetch the inserted/updated rows
+        await session.close()
+        return {"message": "Upsert completed", "data": result.fetchall()}
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return {"error": str(ve), "status": "failure"}
+    
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return {"error": "Database error", "status": "failure"}
+    
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(f"An unexpected error occurred: {e}")
+        return {"error": "An unexpected error occurred", "status": "failure"}
+    
+
+async def upsert_session_screening_status(
+    columns_data: list,
+    session_id: str,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    """
+    :param columns_data: [{"overall_status":STATUS.COMPLETED}] list of one element TODO we can neaten this up later
+    :param session_id:
+    :param session:
+    :return:
+    """
+    try:
+        session = SessionFactory()
+
+        # Get the table class dynamically
+        table_class = Base.metadata.tables.get("session_screening_status")
+        if table_class is None:
+            raise ValueError(f"Table 'session_screening_status' does not exist in the database schema.")
+
+        # Deduplicate the rows based on session_id
+        unique_records = {}
+        for record in columns_data:
+            record["session_id"] = session_id
+            # Use session_id as the key to deduplicate rows
+            unique_records[record["session_id"]] = record
+
+        # Convert the dictionary back to a list
+        deduplicated_columns_data = list(unique_records.values())
+
+        # Extract column names dynamically
+        columns = list(deduplicated_columns_data[0].keys())
+
+        # Prepare bulk insert statement using PostgreSQL ON CONFLICT
+        stmt = insert(table_class).values(deduplicated_columns_data)
+
+        # Modify ON CONFLICT to use session_id and update the non-unique fields
+        stmt = stmt.on_conflict_do_update(
+            index_elements=["session_id"],  # Index on session_id, no unique constraint
+            set_={col: stmt.excluded[col] for col in columns if col != "session_id"}
+        ).returning(table_class)
+
+        # Execute bulk upsert
+        result = await session.execute(stmt)
+        await session.commit()
+
+        # Fetch the inserted/updated rows
+        await session.close()
+        return {"message": "Upsert completed", "data": result.fetchall()}
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return {"error": str(ve), "status": "failure"}
+    
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return {"error": "Database error", "status": "failure"}
+    
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(f"An unexpected error occurred: {e}")
+        return {"error": "An unexpected error occurred", "status": "failure"}
+
+
+async def get_ensid_screening_status_static(
+        ens_id: list,
+        session_id: str,
+        session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        required_columns = ["id", "session_id", "ens_id", "overall_status","orbis_retrieval_status","screening_modules_status","report_generation_status","create_time","update_time"]
+        table_class = Base.metadata.tables.get("ensid_screening_status")
+        if table_class is None:
+            raise ValueError(
+                f"Table ensid_screening_status does not exist in the database schema."
+            )
+
+        columns_to_select = [
+            getattr(table_class.c, column) for column in required_columns
+        ]
+
+        query = select(*columns_to_select)
+
+        # if ens_id:
+        #     query = query.filter(table_class.c.ens_id.in(ens_id)).distinct()
+
+        if session_id:
+            query = query.where(table_class.c.session_id == str(session_id)).filter(table_class.c.ens_id.in_(ens_id))
+
+        result = await session.execute(query)
+
+        columns = result.keys()
+
+        rows = result.all()
+
+        formatted_res = [
+            dict(
+                zip(columns, row)
+            )  # zip the column names with their corresponding row values
+            for row in rows
+        ]
+
+        # Return the formatted result
+        await session.close()
+        return formatted_res
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return []
+
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return []
+
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(f"An unexpected error occurred: {e}")
+        return []
+
+
+async def get_session_screening_status_static(
+        session_id: str,
+        session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        required_columns = ["id", "session_id","overall_status","list_upload_status","supplier_name_validation_status","screening_analysis_status","create_time","update_time"]
+        table_class = Base.metadata.tables.get("session_screening_status")
+        if table_class is None:
+            raise ValueError(
+                f"Table session_screening_status does not exist in the database schema."
+            )
+
+        columns_to_select = [
+            getattr(table_class.c, column) for column in required_columns
+        ]
+
+        query = select(*columns_to_select)
+
+        if session_id:
+            query = query.where(table_class.c.session_id == str(session_id))
+
+        result = await session.execute(query)
+
+        columns = result.keys()
+
+        rows = result.all()
+
+        formatted_res = [
+            dict(
+                zip(columns, row)
+            )  # zip the column names with their corresponding row values
+            for row in rows
+        ]
+
+        # Return the formatted result
+        await session.close()
+        return formatted_res
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return []
+
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return []
+
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(f"An unexpected error occurred: {e}")
+        return []
+
+async def check_and_update_unique_value(
+    table_name: str,
+    column_name: str,
+    bvd_id_to_check: str,
+    ens_id: str,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(f"Table '{table_name}' does not exist in the database schema.")
+
+        # Step 1: Check if the value already exists in the column, excluding the current row
+        query = select(table_class.c.ens_id).where(
+            (getattr(table_class.c, column_name) == bvd_id_to_check) &
+            (table_class.c.ens_id != ens_id)  # Exclude the current row
+        )
+        query = query.order_by(desc(table_class.c.create_time))
+        result = await session.execute(query)
+        existing_rows = result.scalars().all()
+
+        if existing_rows: # EXISTING ENS-IDs WITH SAME BVDID AS CURRENT ROW
+
+            logger.info("----------- BVDID ALREADY EXISTS")
+            latest_ens_id = existing_rows[0]
+            logger.debug("PRE-EXISTING ENS_ID ----> %s", latest_ens_id)
+
+            # Step 2: If value exists, update pre_existing_bvdid to 'Yes' for all matching rows
+            update_query = (
+                update(table_class)
+                .where(getattr(table_class.c, column_name) == bvd_id_to_check)
+                .values(pre_existing_bvdid=True)
+            )
+            await session.execute(update_query)
+
+            # Step 3: Also update pre_existing_bvdid and replace ens_id with pre-existing ens_id for the current row being updated
+            update_self_query = (
+                update(table_class)
+                .where(table_class.c.ens_id == ens_id)
+                .values(pre_existing_bvdid=True, ens_id=latest_ens_id)
+            )
+            await session.execute(update_self_query)
+
+            await session.commit()
+            await session.close()
+            return latest_ens_id, {"status": "duplicate", "message": f"Value '{bvd_id_to_check}' already exists. pre_existing_bvdid set to 'Yes'."}
+
+        else:
+            # Step 4: If value does not exist, update the column for the given ens_id
+            update_query = (
+                update(table_class)
+                .where(table_class.c.ens_id == ens_id)
+                .values({column_name: bvd_id_to_check})
+            )
+            await session.execute(update_query)
+            await session.commit()
+            await session.close()
+            return ens_id, {"status": "unique", "message": f"Value '{bvd_id_to_check}' successfully updated."}
+
+    except ValueError as ve:
+        logger.error(f"Error: {ve}")
+        return ens_id, {"error": str(ve), "status": "failure"}
+
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {str(e)}")
+        return ens_id, {"error": "An unexpected error occurred", "status": "failure"}
+
+
+async def get_ens_ids_for_session_id(
+    table_name: str,
+    required_columns: list,
+    session_id: str,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    """
+
+    :param table_name: name of table in database to search
+    :param session_id: session_id to pull all rows of that session_id
+    :param session: database session object
+    :return: list of dicts like this [{"ens_id": "ABC-123"},{"ens_id": "ABZ-122"},
+                                        {"ens_id": "ABA-D23"},{"ens_id": "ABD-D23"}] ... etc
+    """
+    try:
+        session = SessionFactory()
+
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(
+                f"Table '{table_name}' does not exist in the database schema."
+            )
+
+        columns_to_select = [
+            getattr(table_class.c, column) for column in required_columns
+        ]
+
+        query = select(*columns_to_select)
+
+        if session_id:
+            query = query.where(table_class.c.session_id == str(session_id)).distinct()
+
+        result = await session.execute(query)
+
+        columns = result.keys()
+
+        rows = result.all()
+
+        formatted_res = [
+            dict(
+                zip(columns, row)
+            )  # zip the column names with their corresponding row values
+            for row in rows
+        ]
+
+        await session.close()
+        # Return the formatted result
+        return formatted_res
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return []
+
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return []
+
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(str(e))
+        logger.error(f"An unexpected error occurred: {e}")
+        return []
+
+async def get_all_ensid_screening_status_static(
+        session_id: str,
+        session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        required_columns = ["session_id", "ens_id", "overall_status","orbis_retrieval_status","screening_modules_status","report_generation_status","create_time","update_time"]
+        table_class = Base.metadata.tables.get("ensid_screening_status")
+        if table_class is None:
+            raise ValueError(
+                f"Table ensid_screening_status does not exist in the database schema."
+            )
+
+        columns_to_select = [
+            getattr(table_class.c, column) for column in required_columns
+        ]
+
+        query = select(*columns_to_select)
+
+        # if ens_id:
+        #     query = query.filter(table_class.c.ens_id.in(ens_id)).distinct()
+
+        if session_id:
+            query = query.where(table_class.c.session_id == str(session_id))
+
+        result = await session.execute(query)
+
+        columns = result.keys()
+
+        rows = result.all()
+
+        formatted_res = [
+            dict(
+                zip(columns, row)
+            )  # zip the column names with their corresponding row values
+            for row in rows
+        ]
+
+        # Return the formatted result
+        await session.close()
+        return formatted_res
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return []
+
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return []
+
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(f"An unexpected error occurred: {e}")
+        return []
+
+async def update_for_ensid_svm_duplication(
+        columns_data: dict,
+        id: str,
+        session_id: str,
+        session: AsyncSession = Depends(deps.get_session)
+        ):
+    try:
+        session = SessionFactory()
+
+        # THIS FUNCTION IS ONLY FOR NAME VALIDATION PROCESS
+        table_name = "upload_supplier_master_data"
+
+        # Get the table class dynamically
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(f"Table '{table_name}' does not exist in the database schema.")
+
+        # Prepare the update values
+        update_values = {key: value for key, value in columns_data.items() if value is not None}
+
+        # Initialize the base update query
+        query = update(table_class).values(update_values)
+
+        # Define conditions dynamically
+        conditions = []
+        if id:
+            conditions.append(table_class.c.id == id)
+        if session_id:
+            conditions.append(table_class.c.session_id == str(session_id))
+
+        # Apply conditions if there are any
+        if conditions:
+            query = query.where(and_(*conditions))
+
+        # Execute the query
+        result = await session.execute(query)
+
+        # Commit the transaction
+        await session.commit()
+
+        # Return success response
+        await session.close()
+        return {"status": "success", "message": "Data updated successfully."}
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return []
+
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return []
+
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(f"An unexpected error occurred: {e}")
+        return []
+
+async def upsert_entity_universe_data(
+    columns_data: list,
+    ens_id: str,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        table_name = "entity_universe"
+
+        # Get the table class dynamically
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(f"Table '{table_name}' does not exist in the database schema.")
+
+        if len(columns_data)>1:
+            raise ValueError(f"Trying to insert multiple rows for one ens_id")
+
+        # Add `ens_id` and `session_id` to each row in `columns_data`
+        rows_to_insert = [
+            {**row, "ens_id": ens_id}
+            for row in columns_data
+        ]
+
+        # Build the UPSERT query (Insert with conflict handling)
+        query = insert(table_class).values(rows_to_insert).on_conflict_do_update(
+            index_elements=["ens_id"],  # Conflict columns
+            set_={col: getattr(insert(table_class).excluded, col) for col in rows_to_insert[0].keys() if col not in ["ens_id"]}
+        )
+
+        # Execute the query
+        await session.execute(query)
+
+        # Commit the transaction
+        await session.commit()
+        await session.close()
+
+        return {"status": "success", "message": f"Upserted {len(rows_to_insert)} rows successfully."}
+
+    except ValueError as ve:
+        logger.error(f"Error: {ve}")
+        return {"error": str(ve), "status": "failure"}
+
+    except SQLAlchemyError as sa_err:
+        logger.error(f"Database error: {sa_err}")
+        return {"error": "Database error", "status": "failure"}
+
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+        return {"error": "An unexpected error occurred", "status": "failure"}
+
+
+# async def update_periodic_last_scheduled_date(
+#     session_id: str,
+#     session: AsyncSession = Depends(deps.get_session),
+# ):
+#     try:
+#         md = Base.metadata
+#         # tables
+#         sss = md.tables.get("session_screening_status")
+#         sgm = md.tables.get("session_group_mapping")
+#         sm  = md.tables.get("schedule_monitoring")
+
+#         if sss is None or sgm is None or sm is None:
+#             raise HTTPException(
+#                 status_code=404,
+#                 detail="Table 'session_screening_status' or 'session_group_mapping' or 'schedule_monitoring' does not exist in the database schema."
+#             )
+
+#         # latest source_id for this session (make ordering deterministic)
+#         latest_source_id_sq = (
+#             select(sss.c.source_id)
+#             .where(
+#                 sss.c.session_id == bindparam("session_id"),
+#                 sss.c.source == "PD",
+#             )
+#             .order_by(sss.c.id.desc())
+#             .limit(1)
+#             .scalar_subquery()
+#         )
+
+#         # CTE: groups whose all statuses are COMPLETED/FAILED for that source_id
+#         valid_sessions = (
+#             select(sgm.c.group_id)
+#             .select_from(sss.join(sgm, sss.c.session_id == sgm.c.session_id))
+#             .where(
+#                 sss.c.source == "PD",
+#                 sss.c.source_id == latest_source_id_sq,
+#             )
+#             .group_by(sgm.c.group_id)
+#             .having(func.bool_and(sss.c.overall_status.in_(("COMPLETED", "FAILED"))))
+#             .cte("valid_sessions")
+#         )
+
+#         # single, stable timestamp
+#         now_cte = select(func.clock_timestamp().label("now_ts")).cte("now_cte")
+
+#         # compare as text to be enum-safe
+#         interval_txt = sm.c.interval.cast(String)
+
+#         # make_interval(years, months, weeks, days, hours, mins, secs)
+#         next_run_expr = case(
+#             (interval_txt == "HOUR",
+#             func.date_trunc("hour", now_cte.c.now_ts) + func.make_interval(0, 0, 0, 0, sm.c.frequency, 0, 0)),
+#             (interval_txt == "DAY",
+#             now_cte.c.now_ts + func.make_interval(0, 0, 0, sm.c.frequency, 0, 0, 0)),
+#             (interval_txt == "WEEK",
+#             now_cte.c.now_ts + func.make_interval(0, 0, sm.c.frequency, 0, 0, 0, 0)),
+#             (interval_txt == "MONTH",
+#             now_cte.c.now_ts + func.make_interval(0, sm.c.frequency, 0, 0, 0, 0, 0)),
+#             (interval_txt == "QUARTER",
+#             now_cte.c.now_ts + func.make_interval(0, sm.c.frequency * 3, 0, 0, 0, 0, 0)),
+#             (interval_txt == "YEAR",
+#             now_cte.c.now_ts + func.make_interval(sm.c.frequency, 0, 0, 0, 0, 0, 0)),
+#             else_=None,
+#         )
+#         # UPDATE schedule_monitoring and return updated rows
+#         upd = (
+#             update(sm)
+#             .values(
+#                 last_scheduled_date=now_cte,
+#                 next_run_date=next_run_expr,
+#             )
+#             .where(sm.c.group_id.in_(select(valid_sessions.c.group_id)))
+#             .returning(sm.c.group_id, sm.c.last_scheduled_date, sm.c.next_run_date)
+#         )
+
+#         res = await session.execute(upd, {"session_id": session_id})
+#         rows = res.mappings().all()
+
+#         if rows:
+#             await session.commit()
+#             return {"status": "success", "updated": rows}
+#         else:
+#             # no-op update; no rollback needed
+#             return {"status": "no_update", "message": "No rows updated. Conditions not met."}
+
+#     except SQLAlchemyError as sa_err:
+#         await session.rollback()
+#         return {"status": "error", "message": str(sa_err)}
+#     except Exception as e:
+#         await session.rollback()
+#         return {"status": "error", "message": str(e)}
+
+async def update_periodic_last_scheduled_date(
+    session_id: str,
+    session: AsyncSession = Depends(deps.get_session),
+):
+    try:
+        md = Base.metadata
+        # tables
+        sss = md.tables.get("session_screening_status")
+        sgm = md.tables.get("session_group_mapping")
+        sm  = md.tables.get("schedule_monitoring")
+
+        if sss is None or sgm is None or sm is None:
+            raise HTTPException(
+                status_code=404,
+                detail="Table 'session_screening_status' or 'session_group_mapping' or 'schedule_monitoring' does not exist in the database schema."
+            )
+
+        # latest source_id for this session (make ordering deterministic)
+        latest_source_id_sq = (
+            select(sss.c.source_id)
+            .where(
+                sss.c.session_id == bindparam("session_id"),
+                sss.c.source == "PD",
+            )
+            .order_by(sss.c.id.desc())
+            .limit(1)
+            .scalar_subquery()
+        )
+
+        # CTE: groups whose all statuses are COMPLETED/FAILED for that source_id
+        valid_sessions = (
+            select(sgm.c.group_id)
+            .select_from(sss.join(sgm, sss.c.session_id == sgm.c.session_id))
+            .where(
+                sss.c.source == "PD",
+                sss.c.source_id == latest_source_id_sq,
+            )
+            .group_by(sgm.c.group_id)
+            .having(func.bool_and(sss.c.overall_status.in_(("COMPLETED", "FAILED"))))
+            .cte("valid_sessions")
+        )
+
+        # single, stable timestamp
+        now_cte = select(func.clock_timestamp().label("now_ts")).cte("now_cte")
+
+        # compare as text to be enum-safe
+        interval_txt = sm.c.interval.cast(String)
+
+        # ADD this helper base timestamp (before next_run_expr):
+        base_ts = now_cte.c.now_ts
+
+        # REPLACE next_run_expr definition with base_ts instead of date_trunc('hour', now):
+        next_run_expr = case(
+            (interval_txt == "HOUR",
+            base_ts + func.make_interval(0, 0, 0, 0, sm.c.frequency, 0, 0)),
+            (interval_txt == "DAY",
+            base_ts + func.make_interval(0, 0, 0, sm.c.frequency, 0, 0, 0)),
+            (interval_txt == "WEEK",
+            base_ts + func.make_interval(0, 0, sm.c.frequency, 0, 0, 0, 0)),
+            (interval_txt == "MONTH",
+            base_ts + func.make_interval(0, sm.c.frequency, 0, 0, 0, 0, 0)),
+            (interval_txt == "QUARTER",
+            base_ts + func.make_interval(0, sm.c.frequency * 3, 0, 0, 0, 0, 0)),
+            (interval_txt == "YEAR",
+            base_ts + func.make_interval(sm.c.frequency, 0, 0, 0, 0, 0, 0)),
+            else_=None,
+        )
+
+        # UPDATE schedule_monitoring and return updated rows
+        upd = (
+            update(sm)
+            .values(
+                last_scheduled_date=now_cte.c.now_ts,  # <-- FIXED
+                next_run_date=next_run_expr,
+            )
+            .where(sm.c.group_id.in_(select(valid_sessions.c.group_id)))
+            .returning(sm.c.group_id, sm.c.last_scheduled_date, sm.c.next_run_date)
+        )
+
+        res = await session.execute(upd, {"session_id": session_id})
+        rows = res.mappings().all()
+
+        if rows:
+            await session.commit()
+            return {"status": "success", "updated": rows}
+        else:
+            # no-op update; no rollback needed
+            return {"status": "no_update", "message": "No rows updated. Conditions not met."}
+
+    except SQLAlchemyError as sa_err:
+        await session.rollback()
+        return {"status": "error", "message": str(sa_err)}
+    except Exception as e:
+        await session.rollback()
+        return {"status": "error", "message": str(e)}
+
+async def mark_first_session_start_time_by_status(
+    session_id: str,
+    session: AsyncSession = Depends(deps.get_session),
+):
+    """
+    If, for the (group_id, source_id) of this session, *all* sessions in that group/source
+    currently have overall_status = 'NOT_STARTED', then this upcoming session is the first.
+    Set schedule_monitoring.last_start_time = now() for those group(s).
+    """
+    try:
+        md = Base.metadata
+        sss = md.tables.get("session_screening_status")
+        sgm = md.tables.get("session_group_mapping")
+        sm  = md.tables.get("schedule_monitoring")
+
+        if sss is None or sgm is None or sm is None:
+            raise HTTPException(
+                status_code=404,
+                detail="Table 'session_screening_status' or 'session_group_mapping' or 'schedule_monitoring' does not exist in the database schema."
+            )
+
+        # Stable now()
+        now_cte = select(func.clock_timestamp().label("now_ts")).cte("now_cte")
+
+        # Resolve active source_id for this session (prefer SSS → fallback to SGM)
+        latest_source_id_sq = (
+            select(sss.c.source_id)
+            .where(sss.c.session_id == bindparam("session_id"), sss.c.source == "PD")
+            .order_by(sss.c.id.desc())
+            .limit(1)
+            .scalar_subquery()
+        )
+        sgm_source_id_sq = (
+            select(sgm.c.source_id)
+            .where(sgm.c.session_id == bindparam("session_id"))
+            .limit(1)
+            .scalar_subquery()
+        )
+        active_source_id_sq = func.coalesce(latest_source_id_sq, sgm_source_id_sq)
+
+        # The group(s) this session belongs to
+        this_groups_cte = (
+            select(sgm.c.group_id)
+            .where(sgm.c.session_id == bindparam("session_id"))
+            .cte("this_groups")
+        )
+
+        # Among those groups, check: ALL sessions for that (group_id, active_source_id) are NOT_STARTED
+        # Note: sss may have many rows per session; we use bool_and over sss.overall_status condition.
+        all_not_started_groups_cte = (
+            select(sgm.c.group_id)
+            .select_from(ssg := sss.join(sgm, sss.c.session_id == sgm.c.session_id))
+            .where(
+                sss.c.source == "PD",
+                sss.c.source_id == active_source_id_sq,
+                sgm.c.group_id.in_(select(this_groups_cte.c.group_id)),
+            )
+            .group_by(sgm.c.group_id)
+            .having(func.bool_and(sss.c.overall_status == "NOT_STARTED"))
+            .cte("all_not_started_groups")
+        )
+
+        # Update last_start_time immediately for those groups
+        upd = (
+            update(sm)
+            .values(last_start_time=now_cte.c.now_ts)
+            .where(sm.c.group_id.in_(select(all_not_started_groups_cte.c.group_id)))
+            .returning(
+                sm.c.group_id,
+                literal_column("'first_session_by_status'").label("event"),
+                sm.c.last_start_time,
+            )
+        )
+
+        res = await session.execute(upd, {"session_id": session_id})
+        rows = res.mappings().all()
+
+        if rows:
+            await session.commit()
+            return {"status": "success", "updated": rows}
+
+        return {
+            "status": "no_update",
+            "message": "Condition not met: not all sessions are NOT_STARTED for this (group_id, source_id).",
+        }
+
+    except SQLAlchemyError as sa_err:
+        await session.rollback()
+        return {"status": "error", "message": str(sa_err)}
+    except Exception as e:
+        await session.rollback()
+        return {"status": "error", "message": str(e)}
+    
+      
+async def upsert_session_screening_counts(
+    session_id: str,
+    session: AsyncSession = Depends(deps.get_session),
+):
+    """
+    Aggregate per-session counts from public.ensid_screening_status and upsert into
+    public.session_screening_status (columns: total_ens_count, completed_ens_count,
+    failed_ens_count, skipped_ens_count).
+
+    WITH base AS (
+        SELECT <session_id>::varchar AS session_id
+    ),
+        agg AS (
+        SELECT
+            b.session_id,
+            COALESCE(COUNT(e.*), 0)::int AS total_count,
+            COALESCE(SUM(CASE WHEN (e.overall_status) = 'COMPLETED' THEN 1 ELSE 0 END), 0)::int AS completed_count,
+            COALESCE(SUM(CASE WHEN (e.overall_status) = 'FAILED'    THEN 1 ELSE 0 END), 0)::int AS failed_count,
+            COALESCE(SUM(CASE WHEN (e.overall_status) = 'SKIPPED'   THEN 1 ELSE 0 END), 0)::int AS skipped_count
+        FROM base b
+        LEFT JOIN public.ensid_screening_status e
+            ON e.session_id = b.session_id::varchar
+        GROUP BY b.session_id
+        )
+        INSERT INTO public.session_screening_status AS s
+        (session_id, total_ens_count, completed_ens_count, failed_ens_count, skipped_ens_count)
+        SELECT
+        session_id, total_count, completed_count, failed_count, skipped_count
+        FROM agg
+        ON CONFLICT (session_id) DO UPDATE
+        SET
+        total_ens_count     = EXCLUDED.total_ens_count,
+        completed_ens_count = EXCLUDED.completed_ens_count,
+        failed_ens_count    = EXCLUDED.failed_ens_count,
+        skipped_ens_count   = EXCLUDED.skipped_ens_count
+        RETURNING *;
+    """
+    try:
+        md = Base.metadata
+
+        # tables
+        sss = md.tables.get("session_screening_status")
+        ess = md.tables.get("ensid_screening_status")
+
+        if sss is None or ess is None:
+            raise HTTPException(
+                status_code=404,
+                detail="Table 'session_screening_status' or 'ensid_screening_status' does not exist in the database schema."
+            )
+
+        # Base CTE with the requested session_id as text to align with ess.session_id::varchar
+        base = select(
+            literal(session_id, type_=String).label("session_id")
+        ).cte("base")
+
+        # Aggregate (LEFT JOIN to produce zeros if no rows exist for that session)
+        agg = (
+            select(
+                base.c.session_id.label("session_id"),
+                func.coalesce(func.count(ess.c.id), 0).cast(Integer).label("total_count"),
+                func.coalesce(
+                    func.sum(
+                        case(
+                            ((ess.c.overall_status) == STATUS.COMPLETED, 1),
+                            else_=0,
+                        )
+                    ),
+                    0,
+                )
+                .cast(Integer)
+                .label("completed_count"),
+                func.coalesce(
+                    func.sum(
+                        case(
+                            ((ess.c.overall_status) == STATUS.FAILED, 1),
+                            else_=0,
+                        )
+                    ),
+                    0,
+                )
+                .cast(Integer)
+                .label("failed_count"),
+                func.coalesce(
+                    func.sum(
+                        case(
+                            ((ess.c.overall_status) == STATUS.SKIPPED, 1),
+                            else_=0,
+                        )
+                    ),
+                    0,
+                )
+                .cast(Integer)
+                .label("skipped_count"),
+            )
+            .select_from(
+                base.outerjoin(
+                    ess,
+                    ess.c.session_id.cast(String) == base.c.session_id,
+                )
+            )
+            .group_by(base.c.session_id)
+            .cte("agg")
+        )
+
+        # Map agg -> destination columns ending with _ens_count
+        insert_stmt = insert(sss).from_select(
+            [
+                sss.c.session_id,
+                sss.c.total_ens_count,
+                sss.c.completed_ens_count,
+                sss.c.failed_ens_count,
+                sss.c.skipped_ens_count,
+            ],
+            select(
+                agg.c.session_id,
+                agg.c.total_count,
+                agg.c.completed_count,
+                agg.c.failed_count,
+                agg.c.skipped_count,
+            ),
+        )
+
+        # Upsert on session_id
+        upsert_stmt = insert_stmt.on_conflict_do_update(
+            index_elements=[sss.c.session_id],
+            set_={
+                "total_ens_count":     insert_stmt.excluded.total_ens_count,
+                "completed_ens_count": insert_stmt.excluded.completed_ens_count,
+                "failed_ens_count":    insert_stmt.excluded.failed_ens_count,
+                "skipped_ens_count":   insert_stmt.excluded.skipped_ens_count,
+            },
+        ).returning(
+            sss.c.id,
+            sss.c.session_id,
+            sss.c.total_ens_count,
+            sss.c.completed_ens_count,
+            sss.c.failed_ens_count,
+            sss.c.skipped_ens_count,
+        )
+
+        res = await session.execute(upsert_stmt)
+        rows = res.mappings().all()
+        await session.commit()
+
+        return {
+            "status": "success",
+            "updated": rows,
+        }
+
+    except SQLAlchemyError as sa_err:
+        await session.rollback()
+        return {"status": "error", "message": str(sa_err)}
+    except Exception as e:
+        await session.rollback()
+        return {"status": "error", "message": str(e)}
+     
+from sqlalchemy import literal
+
+
+from sqlalchemy.dialects.postgresql import insert  # ✅ PostgreSQL-specific insert
+from sqlalchemy import literal
+
+
+async def insert_notification_data(
+        table_name: str,
+        columns_data: list,
+        ens_id: str,
+        session_id: str,
+        session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        # Get the table class dynamically
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(f"Table '{table_name}' does not exist in the database schema.")
+
+        # Add `ens_id` and `session_id` to each row
+        rows_to_insert = [
+            {**row, "ens_id": ens_id, "session_id": session_id}
+            for row in columns_data
+        ]
+
+        # Identify enum-like columns in the table
+        enum_like_columns = {
+            col.name for col in table_class.columns
+            if hasattr(col.type, "enums")  # Detects Enum columns
+        }
+
+        # Wrap enum-like fields with literal()
+        for row in rows_to_insert:
+            for key in row:
+                if key in enum_like_columns:
+                    row[key] = literal(row[key])
+
+        # Build the insert query
+        query = insert(table_class).values(rows_to_insert)
+
+        # Execute the query
+        await session.execute(query)
+        await session.commit()
+        await session.close()
+
+        return {"status": "success", "message": f"Inserted {len(rows_to_insert)} rows successfully."}
+
+    except ValueError as ve:
+        logger.error(f"Error: {ve}")
+        return {"error": str(ve), "status": "failure"}
+
+    except SQLAlchemyError as sa_err:
+        logger.error(f"Database error: {sa_err}")
+        return {"error": "Database error", "status": "failure"}
+
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+        return {"error": "An unexpected error occurred", "status": "failure"}
+
+
+async def get_session_source(
+        session_id: str,
+
+        session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        required_columns = ["source", "source_id"]
+        table_class = Base.metadata.tables.get("session_screening_status")
+        if table_class is None:
+            raise ValueError(
+                f"Table session_screening_status does not exist in the database schema."
+            )
+
+        columns_to_select = [
+            getattr(table_class.c, column) for column in required_columns
+        ]
+
+        query = select(*columns_to_select)
+
+        if session_id:
+            query = query.where(table_class.c.session_id == str(session_id))
+
+        result = await session.execute(query)
+
+        columns = result.keys()
+
+        rows = result.all()
+
+        formatted_res = [
+            dict(
+                zip(columns, row)
+            )  # zip the column names with their corresponding row values
+            for row in rows
+        ]
+
+        # Return the formatted result
+        await session.close()
+        return formatted_res
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return []
+
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return []
+
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(f"An unexpected error occurred: {e}")
+        return []
+
+async def get_session_statuses(
+        session_ids: list,
+        session: AsyncSession = Depends(deps.get_session)
+):
+    """
+    Get all of the information from session_screening_status table for the session_ids provided in the list
+    used in session.py
+    :param session_id: list of session_ids
+    :param session: db session
+    :return: list of rows from session_screening_status
+    """
+    try:
+        session = SessionFactory()
+
+        table_class = Base.metadata.tables.get("session_screening_status")
+        if table_class is None:
+            raise ValueError(
+                f"Table session_screening_status does not exist in the database schema."
+            )
+
+        query = select(table_class)
+
+        if session_ids:
+            query = query.where(table_class.c.session_id.in_(session_ids))
+
+        result = await session.execute(query)
+
+        columns = result.keys()
+
+        rows = result.all()
+
+        formatted_res = [
+            dict(
+                zip(columns, row)
+            )  # zip the column names with their corresponding row values
+            for row in rows
+        ]
+
+        # Return the formatted result
+        await session.close()
+        return formatted_res
+
+    except ValueError as ve:
+        # Handle the case where the table does not exist
+        logger.error(f"Error: {ve}")
+        return []
+
+    except SQLAlchemyError as sa_err:
+        # Handle SQLAlchemy-specific errors
+        logger.error(f"Database error: {sa_err}")
+        return []
+
+    except Exception as e:
+        # Catch any other exceptions
+        logger.error(f"An unexpected error occurred: {e}")
+        return []
+
+
+async def upsert_dynamic_management_data(
+    table_name: str,
+    columns_data: list,
+    ens_id: str,
+    session_id: str,
+    contact_id: str,
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+
+        # Get the table class dynamically
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(f"Table '{table_name}' does not exist in the database schema.")
+
+        # Add `ens_id` and `session_id` to each row in `columns_data`
+        rows_to_insert = [
+            {**row, "ens_id": ens_id, "session_id": session_id, "contact_id": contact_id}
+            for row in columns_data
+        ]
+
+        # Build the UPSERT query (Insert with conflict handling)
+        query = insert(table_class).values(rows_to_insert).on_conflict_do_update(
+            index_elements=["ens_id", "session_id", "contact_id"],  # Conflict columns
+            set_={col: getattr(insert(table_class).excluded, col) for col in rows_to_insert[0].keys() if col not in ["ens_id", "session_id"]}
+        )
+
+        # Execute the query
+        await session.execute(query)
+
+        # Commit the transaction
+        await session.commit()
+        await session.close()
+
+        return {"status": "success", "message": f"Upserted {len(rows_to_insert)} rows successfully."}
+
+    except ValueError as ve:
+        logger.error(f"Error: {ve}")
+        return {"error": str(ve), "status": "failure"}
+
+    except SQLAlchemyError as sa_err:
+        logger.error(f"Database error: {sa_err}")
+        return {"error": "Database error", "status": "failure"}
+
+    except Exception as e:
+        logger.error(f"An unexpected error occurred: {e}")
+        return {"error": "An unexpected error occurred", "status": "failure"}
+
+
+async def get_dynamic_data(
+    table_name: str,
+    required_columns: list,
+    identifier_column: str = None,   # e.g. "ens_id"
+    identifier_value: str = None,    # e.g. "123"
+    session: AsyncSession = Depends(deps.get_session)
+):
+    try:
+        session = SessionFactory()
+        table_class = Base.metadata.tables.get(table_name)
+        if table_class is None:
+            raise ValueError(f"Table '{table_name}' does not exist in the database schema.")
+
+        # Select columns
+        if required_columns == ["all"]:
+            columns_to_select = [table_class.c[col] for col in table_class.c.keys()]
+        else:
+            missing = [col for col in required_columns if col not in table_class.c]
+            if missing:
+                raise ValueError(f"Columns not found in table '{table_name}': {missing}")
+            columns_to_select = [table_class.c[col] for col in required_columns]
+
+        query = select(*columns_to_select)
+
+        # Apply single column filter if both identifier params are provided
+        if identifier_column and identifier_value is not None:
+            if identifier_column not in table_class.c:
+                raise ValueError(f"Column '{identifier_column}' does not exist in table '{table_name}'.")
+            query = query.where(table_class.c[identifier_column] == str(identifier_value))
+
+        query = query.distinct()
+        result = await session.execute(query)
+
+        rows = result.fetchall()
+        columns = result.keys()
+
+        return [dict(zip(columns, row)) for row in rows]
+
+    except ValueError as ve:
+        logger.error(f"ValueError: {ve}")
+        return []
+
+    except SQLAlchemyError as sa_err:
+        logger.error(f"Database error: {sa_err}")
+        return []
+
+    except Exception as e:
+        logger.error(f"Unexpected error: {e}")
+        return []
+
+    finally:
+        await session.close()
