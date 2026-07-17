@@ -3,7 +3,7 @@
 # Imports 
 import json
 import openai
-from openai import AzureOpenAI
+from openai import OpenAI
 from dotenv import load_dotenv
 import os
 
@@ -28,16 +28,28 @@ API_KEY= os.getenv("OPENAI__API_KEY")
 CONFIG=os.getenv("OPENAI__CONFIG")
 SCRAPER=os.getenv("SCRAPER__SCRAPER_URL")
 
+# Overridable via env so switching models in future (e.g. moving off the
+# old gpt-4-32k/gpt-4o deployments to the new Foundry gpt-5.1 deployment)
+# doesn't require another code change. Falls back to the previous
+# hardcoded gpt-4-32k/gpt-4o selection logic only if
+# OPENAI__MODEL_DEPLOYMENT_NAME isn't set.
 require_llm_response_speed = True
-if require_llm_response_speed or (CONFIG.lower() == "demo"):
-    model_deployment_name = "gpt-4-32k"
-else:
-    model_deployment_name = "gpt-4o"
+model_deployment_name = os.getenv("OPENAI__MODEL_DEPLOYMENT_NAME")
+if not model_deployment_name:
+    if require_llm_response_speed or (CONFIG.lower() == "demo"):
+        model_deployment_name = "gpt-4-32k"
+    else:
+        model_deployment_name = "gpt-4o"
 
-client = AzureOpenAI(
-    azure_endpoint=AZURE_ENDPOINT,
+# Azure OpenAI v1 API (GA since August 2025): plain OpenAI() client
+# pointed at <endpoint>/openai/v1/, api_key passed directly. This
+# replaces the old AzureOpenAI() client + dated api_version parameter
+# (e.g. "2024-07-01-preview") entirely — no api-version string to keep
+# up to date as Azure ships new monthly versions, and it's the path
+# Microsoft is steering all Azure OpenAI usage toward going forward.
+client = OpenAI(
+    base_url=f"{AZURE_ENDPOINT.rstrip('/')}/openai/v1/",
     api_key=API_KEY,
-    api_version="2024-07-01-preview"
 )
 
 async def supplier_name_validation(data, session, search_engine:str):

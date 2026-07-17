@@ -3,7 +3,6 @@ import requests
 
 from dotenv import load_dotenv
 import openai
-from openai import AzureOpenAI
 
 
 def run_ts_analysis(client, model, article, name, country, url):
@@ -46,12 +45,21 @@ def run_ts_analysis(client, model, article, name, country, url):
         })
 
     try:
-        response = client.chat.completions.create(
-            model=model,  
-            # response_format={"type":"json_object"},
-            messages=message_text,
-            temperature=0.2  
-        )
+        # GPT-5.x on Azure are reasoning models and reject `temperature`
+        # (and top_p/presence_penalty/frequency_penalty) outright with
+        # HTTP 400 "Unsupported parameter" — the old sampling controls
+        # don't apply to the reasoning pipeline. Only send it for
+        # non-reasoning (gpt-4*) deployments.
+        is_reasoning_model = model.lower().startswith("gpt-5")
+
+        create_kwargs = {
+            "model": model,
+            "messages": message_text,
+        }
+        if not is_reasoning_model:
+            create_kwargs["temperature"] = 0.2
+
+        response = client.chat.completions.create(**create_kwargs)
 
         response_content = response.choices[0].message.content.strip()
         result = eval(response_content)
