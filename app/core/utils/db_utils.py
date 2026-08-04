@@ -325,6 +325,11 @@ async def upsert_dynamic_ens_data(
             for row in columns_data
         ]
 
+        if not rows_to_insert:
+            logger.info(f"upsert_dynamic_ens_data: nothing to upsert into '{table_name}' for ens_id={ens_id} (empty columns_data) — skipping.")
+            await session.close()
+            return {"status": "success", "message": "Nothing to upsert (empty columns_data)."}
+
         # Build the UPSERT query (Insert with conflict handling)
         query = insert(table_class).values(rows_to_insert).on_conflict_do_update(
             index_elements=["ens_id", "session_id"],  # Conflict columns
@@ -372,6 +377,11 @@ async def upsert_dynamic_ens_data_summary(
             {**row, "ens_id": ens_id, "session_id": session_id}
             for row in columns_data
         ]
+
+        if not rows_to_insert:
+            logger.info(f"upsert_dynamic_ens_data_summary: nothing to upsert into '{table_name}' for ens_id={ens_id} (empty columns_data) — skipping.")
+            await session.close()
+            return {"status": "success", "message": "Nothing to upsert (empty columns_data)."}
 
         # Build the UPSERT query (Insert with conflict handling)
         query = insert(table_class).values(rows_to_insert).on_conflict_do_update(
@@ -421,6 +431,11 @@ async def upsert_kpi(
         for record in columns_data:
             record["ens_id"] = ens_id
             record["session_id"] = session_id
+
+        if not columns_data:
+            logger.info(f"upsert_kpi: nothing to upsert into '{table_name}' for ens_id={ens_id} (empty columns_data) — skipping.")
+            await session.close()
+            return {"status": "success", "message": "Nothing to upsert (empty columns_data)."}
 
         # Extract column names dynamically
         columns = list(columns_data[0].keys())
@@ -475,6 +490,11 @@ async def upsert_ensid_screening_status(
             if 'ens_id' not in record:
                 raise ValueError(f"Missing 'ens_id' in record: {record}")
             record["session_id"] = session_id
+
+        if not columns_data:
+            logger.info(f"upsert_ensid_screening_status: nothing to upsert for session_id={session_id} (empty columns_data) — skipping.")
+            await session.close()
+            return {"status": "success", "message": "Nothing to upsert (empty columns_data)."}
 
         # Extract column names dynamically
         columns = list(columns_data[0].keys())
@@ -538,6 +558,11 @@ async def upsert_session_screening_status(
 
         # Convert the dictionary back to a list
         deduplicated_columns_data = list(unique_records.values())
+
+        if not deduplicated_columns_data:
+            logger.info(f"upsert_session_screening_status: nothing to upsert for session_id={session_id} (empty columns_data) — skipping.")
+            await session.close()
+            return {"status": "success", "message": "Nothing to upsert (empty columns_data)."}
 
         # Extract column names dynamically
         columns = list(deduplicated_columns_data[0].keys())
@@ -965,6 +990,11 @@ async def upsert_entity_universe_data(
             {**row, "ens_id": ens_id}
             for row in columns_data
         ]
+
+        if not rows_to_insert:
+            logger.info(f"upsert_entity_universe_data: nothing to upsert for ens_id={ens_id} (empty columns_data) — skipping.")
+            await session.close()
+            return {"status": "success", "message": "Nothing to upsert (empty columns_data)."}
 
         # Build the UPSERT query (Insert with conflict handling)
         query = insert(table_class).values(rows_to_insert).on_conflict_do_update(
@@ -1630,6 +1660,11 @@ async def upsert_dynamic_management_data(
             {**row, "ens_id": ens_id, "session_id": session_id, "contact_id": contact_id}
             for row in columns_data
         ]
+
+        if not rows_to_insert:
+            logger.info(f"upsert_dynamic_management_data: nothing to upsert into '{table_name}' for ens_id={ens_id} contact_id={contact_id} (empty columns_data) — skipping.")
+            await session.close()
+            return {"status": "success", "message": "Nothing to upsert (empty columns_data)."}
 
         # Build the UPSERT query (Insert with conflict handling)
         query = insert(table_class).values(rows_to_insert).on_conflict_do_update(

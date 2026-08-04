@@ -1,7 +1,7 @@
 {
   "date": "4th August, 2026",
   "risk_level": "High",
-  "summary_of_findings": "The due diligence conducted on ALIBABA (CHINA) CO., LTD. Highlights high risk ratings, prominent reputational issues as well as significant problematic news mentions revealed in investigative journalism. The risk assessment also detected reasonable debt ratios raising solvency questions. Additional indicators shows, the entity presents moderate risk in their information security measures. Given the risk factors identified, advanced due diligence measures should be implemented.",
+  "summary_of_findings": "Our investigation into ALIBABA (CHINA) CO., LTD. Reveals an high overall risk classification, serious market perception in conjunction with noteworthy adverse public records reported in industry publications. The review also identified fair economic indicators impacting business sustainability. In terms of additional indicators, the assessment identified moderate concerns in the entity's cyber risk profile. These findings necessitate thorough monitoring and stringent control measures.",
   "sanctions_summary": [
     "No notable sanction findings for the entity."
   ],
@@ -35,7 +35,7 @@
   "sanctions_rating": "No Alerts",
   "entity_existence_rating": "Low",
   "name": "ALIBABA (CHINA) CO., LTD.",
-  "google_image_name": null,
+  "google_image_name": "CN9365870168_322",
   "location": "HANGZHOU, China",
   "address": "\u957f\u6cb3\u8857\u9053\u7f51\u5546\u8def699\u53f74\u53f7\u697c5\u697c508\u5ba4, \u6ee8\u6c5f\u533a, 310051, HANGZHOU, China",
   "website": "www.alibabagroup.com",
@@ -127,9 +127,9 @@
       "kpi_area": "CYB",
       "kpi_code": "CYB1A",
       "kpi_flag": true,
-      "kpi_details": "High Cyber Risk Rating: 450",
-      "kpi_rating": "High",
-      "kpi_definition": "Cyber Risk Rating Score",
+      "kpi_details": "[{\"factor\": \"Resolved IP\", \"value\": \"47.246.131.152\"}, {\"factor\": \"Botnet Threat\", \"value\": \"NO\"}, {\"factor\": \"Malware Hosting Threat\", \"value\": \"NO\"}, {\"factor\": \"Command & Control Threat\", \"value\": \"NO\"}, {\"factor\": \"Spam Server Threat\", \"value\": \"NO\"}, {\"factor\": \"Overall Compromised\", \"value\": \"NO\"}, {\"factor\": \"Vendor / 3rd-Party Risk\", \"value\": \"PASS\"}, {\"factor\": \"Fraud / Compliance Flag\", \"value\": \"NO\"}]",
+      "kpi_rating": "Low",
+      "kpi_definition": "Cyber Risk Validation",
       "kpi_data": [
         "High Cyber Risk Rating: 450"
       ]
@@ -157,7 +157,7 @@
       ]
     }
   ],
-  "session_id": "de45f0a3-b845-4ab8-b5e1-29301b6a859a",
+  "session_id": "9ad03b6f-366a-4807-ba65-e79d8f235a94",
   "ens_id": "a8c7ae2f-9f13-436b-ab92-e811d3c2744d",
   "disable-regulator-and-legal": true
 }

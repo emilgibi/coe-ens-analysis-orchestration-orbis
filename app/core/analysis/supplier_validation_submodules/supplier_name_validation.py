@@ -140,22 +140,7 @@ async def supplier_name_validation(data, session, search_engine:str):
     }
 
     # ── Pre-fetched cache check ──────────────────────────────────────
-    # orbis_master_data (populated ahead of time by the PythonProject
-    # batch script, in this same production DB) may already have a
-    # resolved match for this entity's uploaded_name — pre-fetched ahead
-    # of live Orbis/TrueSight API access being retired.
-    #
-    # Rather than reverse-engineer Moody's raw TrueSight response shape,
-    # this fabricates a matched_supplier_data dict in that exact same
-    # shape (BVDID / MATCH.0.{SCORE,NAME,ADDRESS,...}) using the cached
-    # row's data, then sets matched/potential_pass exactly as a live
-    # confirmed match would. Every line of code below this point —
-    # building updated_data, writing to upload_supplier_master_data,
-    # the AUTO_ACCEPT/REVIEW status logic — runs completely unchanged
-    # either way, so Entity Name Validation shows and behaves identically
-    # in the UI whether this entity's match came from cache or a live
-    # TrueSight search. Falls through to the existing live search below
-    # if there's no cache hit, so this is purely additive.
+    logger.info(f"[DATA-SOURCE] Step 1 (Name Validation) — checking cache before calling live TrueSight API — uploaded_name={incoming_name!r}")
     matched_supplier_data, potential_pass, matched = {}, False, False
     cache_row = None
     try:
@@ -169,12 +154,24 @@ async def supplier_name_validation(data, session, search_engine:str):
         )
         cache_row = cache_result.mappings().first()
     except Exception as e:
-        logger.warning(f"[SNV] orbis_master_data cache lookup failed (falling back to live search): {e}")
+        logger.warning(f"[DATA-SOURCE] Step 1 (Name Validation) — CACHE LOOKUP ERROR — uploaded_name={incoming_name!r} — falling back to live API: {e}")
+        # Without this rollback, a failed query here leaves the shared
+        # session's transaction in Postgres's "aborted, ignore everything
+        # until rollback" state — every subsequent query on this same
+        # session (this entity's own update_dynamic_ens_data write, or
+        # later entities processed in the same batch) would then fail
+        # with a generic "current transaction is aborted" error that has
+        # nothing to do with its own logic, masking the real problem.
+        try:
+            await session.rollback()
+        except Exception as rollback_error:
+            logger.error(f"[DATA-SOURCE] Step 1 (Name Validation) — rollback after cache lookup failure ALSO failed: {rollback_error}")
         cache_row = None
 
     cached_bvd_id = (cache_row or {}).get("suggested_bvd_id") or (cache_row or {}).get("bvd_id")
     if cache_row and cached_bvd_id and cached_bvd_id not in ("", "N/A"):
-        logger.info(f"[SNV] cache hit for uploaded_name={incoming_name!r}, using pre-fetched match (bvd_id={cached_bvd_id})")
+        logger.info(f"[DATA-SOURCE] Step 1 (Name Validation) — SERVING FROM DATABASE — live TrueSight API call skipped — uploaded_name={incoming_name!r} bvd_id={cached_bvd_id}")
+
         cached_national_id = cache_row.get("national_identifier")
         if isinstance(cached_national_id, list) and cached_national_id:
             cached_national_id = cached_national_id[0]
@@ -210,6 +207,7 @@ async def supplier_name_validation(data, session, search_engine:str):
         matched = True
         potential_pass = False
     else:
+        logger.info(f"[DATA-SOURCE] Step 1 (Name Validation) — SERVING FROM LIVE API — uploaded_name={incoming_name!r}")
         matched_supplier_data, potential_pass, matched = get_possible_suppliers(match_payload, static_case=False)
     # ── End cache check ──
  
