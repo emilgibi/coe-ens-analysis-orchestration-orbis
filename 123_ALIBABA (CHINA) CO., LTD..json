@@ -1,0 +1,163 @@
+{
+  "date": "4th August, 2026",
+  "risk_level": "High",
+  "summary_of_findings": "The due diligence conducted on ALIBABA (CHINA) CO., LTD. Highlights high risk ratings, prominent reputational issues as well as significant problematic news mentions revealed in investigative journalism. The risk assessment also detected reasonable debt ratios raising solvency questions. Additional indicators shows, the entity presents moderate risk in their information security measures. Given the risk factors identified, advanced due diligence measures should be implemented.",
+  "sanctions_summary": [
+    "No notable sanction findings for the entity."
+  ],
+  "anti_summary": [
+    "No notable Bribery, Corruption, or Fraud findings for this entity."
+  ],
+  "gov_summary": [
+    "Group / Global Ultimate Owner not found to be state-controlled",
+    "No PEP findings for the individual."
+  ],
+  "financial_summary": [
+    "Current Ratio: Medium (1.34)"
+  ],
+  "adv_summary": [
+    "There are other potential news findings."
+  ],
+  "additional_indicators_summary": [
+    "There are notable findings in cybersecurity screening/profiling for this entity."
+  ],
+  "ral_summary": [
+    "No legal or regulatory findings available."
+  ],
+  "gov_rating": "No Alerts",
+  "anti_rating": "No Alerts",
+  "regulatory_and_legal_rating": "Deactivated",
+  "adv_rating": "High",
+  "financial_rating": "Medium",
+  "additional_indicators_rating": "Medium",
+  "esg_rating": "No Alerts",
+  "cyber_rating": "Medium",
+  "sanctions_rating": "No Alerts",
+  "entity_existence_rating": "Low",
+  "name": "ALIBABA (CHINA) CO., LTD.",
+  "google_image_name": null,
+  "location": "HANGZHOU, China",
+  "address": "\u957f\u6cb3\u8857\u9053\u7f51\u5546\u8def699\u53f74\u53f7\u697c5\u697c508\u5ba4, \u6ee8\u6c5f\u533a, 310051, HANGZHOU, China",
+  "website": "www.alibabagroup.com",
+  "active_status": "Active",
+  "operation_type": "Private",
+  "legal_status": "Private limited companies",
+  "national_id": "Trade register number: 91330100799655058B",
+  "alias": "N/A",
+  "incorporation_date": "26/03/2007",
+  "subsidiaries": "59 entities",
+  "corporate_group": "997 entities",
+  "shareholders": "Other minority shareholders ~100.0%",
+  "key_exec": "Mr Yafen Xu (Chief Financial Officer)\n\nMs Jane Fang Jiang (Executive Director and General Manager)\n\nMs Yunle Feng ()\n\nChina merchants bank hangzhou high tech branch ()\n\n\n & 10 previous key executives",
+  "revenue": "1B (USD - 2018-12-31)",
+  "employee_count": "1520 employees",
+  "external_vendor_id": "test_91330100799655058B",
+  "uploaded_name": "Alibaba Group Holding Limited",
+  "annexure": [
+    {
+      "id": "1",
+      "title": "Full List of Shareholders",
+      "contents": "\n\nDirect Shareholders\n\n\n1. ALIBABA GROUP SERVICES LIMITED (100.00%)"
+    },
+    {
+      "id": "2",
+      "title": "Key Management Personnel",
+      "contents": "Current Key Executives\n\n\n1. Mr Yafen Xu - Chief Financial Officer (CFO); Financial executive (Finance & Accounting)\n2. Ms Jane Fang Jiang - Member; Highest executive (Board of Directors; Senior management)\n3. Ms Yunle Feng - Member (Supervisory Board)\n4. China merchants bank hangzhou high tech branch - Banker (Advisors)\n\n\nPrevious Key Executives\n\n\n1. Mr Zhaoxi, Jonathan Lu - President / Chairman (Board of Directors)\n2. Mr Yong Zhang - President / Chairman; Highest executive (Board of Directors; Senior management)\n3. Mr Jack Yun Ma - Manager (Other or unspecified department)\n4. Mr Trudy Shan Dai - Member (Board of Directors)\n5. Ms Wei, Maggie Wu - Member (Board of Directors)\n6. Mr junfang zheng - Member (Supervisory Board)\n7. Ms Jessie Junfang Zheng - Member (Supervisory Board)\n8. China construction bank, zhejiang branch yuhang subbranch - Banker (Advisors)\n9. China merchants bank co., ltd., zhejiang branch, hangzhou high-tech subbranch - Banker (Advisors)\n10. zhong guo jian she yin xing zhe jiang sheng fen xing hang zhou shi yu hang zhi xing - Banker (Advisors)"
+    }
+  ],
+  "entity_existence_findings": true,
+  "entity_existence_data": [
+    {
+      "kpi_area": "DOM",
+      "kpi_code": "DOM1A",
+      "kpi_flag": true,
+      "kpi_details": "[{\"Factor\": \"Domain Name\", \"Value\": \"alibabagroup.com\"}, {\"Factor\": \"Creation Date\", \"Value\": \"10-03-2007\"}, {\"Factor\": \"Expiration Date\", \"Value\": \"10-03-2030\"}, {\"Factor\": \"Updated Date\", \"Value\": \"05-12-2025\"}, {\"Factor\": \"Registrant Org\", \"Value\": \"\"}, {\"Factor\": \"Registrant Country\", \"Value\": \"cn\"}, {\"Factor\": \"Registrar\", \"Value\": \"alibaba cloud computing ltd. d/b/a hichina (www.net.cn)\"}, {\"Factor\": \"Registrar Url\", \"Value\": \"http://wanwang.aliyun.com\"}, {\"Factor\": \"Emails\", \"Value\": \"\"}, {\"Factor\": \"Dnssec\", \"Value\": \"unsigned\"}, {\"Factor\": \"Vendor Onboarding Date (Client Database)\", \"Value\": \"\"}]",
+      "kpi_rating": "Low",
+      "kpi_definition": "Domain Validation",
+      "kpi_data": null
+    }
+  ],
+  "sanctions_findings": false,
+  "bribery_findings": false,
+  "corruption_findings": false,
+  "financial_findings": true,
+  "financial_data": [
+    {
+      "kpi_area": "BKR",
+      "kpi_code": "BKR5A",
+      "kpi_flag": true,
+      "kpi_details": "Current Ratio: Medium (1.34)",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Current Ratio",
+      "kpi_data": [
+        "Current Ratio: Medium (1.34)"
+      ]
+    }
+  ],
+  "sown_findings": false,
+  "corporate_ownership_findings": false,
+  "adv_findings": true,
+  "adv_data": [
+    {
+      "kpi_area": "ONF",
+      "kpi_code": "ONF1A",
+      "kpi_flag": true,
+      "kpi_details": "Other News Findings are as follows:\n1. AGTech Holdings Ltd. - Annual Report /: ['Securities market'] - CHARACTERISTICS OF GEM GEM has been positioned as a market designed to accommodate small and mid-sized companies to which a higher investment risk may be attached than other companies listed on the Stock Exchange. Prospective investors should be aware of [...] \n Source:Acquire Media | Publication: None | (Date: 2024-07-25)\n",
+      "kpi_rating": "High",
+      "kpi_definition": "Other News Findings",
+      "kpi_data": [
+        "AGTech Holdings Ltd. - Annual Report /: ['Securities market'] - CHARACTERISTICS OF GEM GEM has been positioned as a market designed to accommodate small and mid-sized companies to which a higher investment risk may be attached than other companies listed on the Stock Exchange. Prospective investors should be aware of [...] \n Source:Acquire Media | Publication: None | (Date: 2024-07-25)"
+      ]
+    },
+    {
+      "kpi_area": "NWS",
+      "kpi_code": "NWS2A",
+      "kpi_flag": true,
+      "kpi_details": "Name: ALIBABA (CHINA) CO., LTD.\nRating: 3.8\nNumber of Reviews: 126\n\n\nReviews:\n\t1. Name: va mi | Rating: 1\nBe aware: AliExpress support doesn't protect the buyer when sellers misrepresent their items. I received a completely incorrect part, and despite providing clear proof, they demanded I return it to China at my own expense. The shipping cost would have been $30 for an $18 item\u2014which is exactly what the seller is counting on to avoid a refund. There is zero accountability for false listings. I\u2019ve deleted my account and moved to platforms like Temu, where refund policies are actually customer-friendly.\n\n\t2. Name: King David | Rating: 5\nFive stars and above e-commerce operation. I been ordering from China Alibaba, no issues. I love this project. I am on my 7 orders with no issues. Please keep sending items to USA.\nWebsite- User friendly, easy to navigate.\nVendors- Language maybe difficult at times, but so far all good.\n\nNote: King David will always buy here and pay here.\n\n\t3. Name: Gionata Mettifogo | Rating: 5\nWorth a visit to see the energy in Chinese tech. All the neighborhood is tech office buildings.\n\n\t4. Name: Darukanethmal | Rating: 5\nAlibaba Group and AliExpress: A Global E-commerce Powerhouse\nAlibaba Group, founded by Jack Ma in 1999, has evolved from a small B2B marketplace into one of the world\u2019s largest technology and retail conglomerates. Its mission\u2014to make it easy to do business anywhere\u2014is realized through a massive ecosystem that connects manufacturers, wholesalers, and individual consumers globally.\n\nAt the heart of the group is Alibaba.com, the world\u2019s leading platform for B2B (Business-to-Business) trade. It serves as a bridge for entrepreneurs and companies to source products in bulk directly from Chinese factories. This is the go-to destination for business owners looking to develop private labels or secure wholesale inventory at competitive prices.\n\nIn contrast, AliExpress operates on a B2C (Business-to-Consumer) model. It allows individual shoppers from around the world to buy single items at near-wholesale rates. While Alibaba.com is built for logistics and bulk shipping, AliExpress is designed for retail convenience, making it a favorite for global consumers and dropshippers alike.\n\nBeyond just shopping, Alibaba Group\u2019s strength lies in its integrated infrastructure, including Cainiao for logistics and Alipay for secure digital payments. As of 2026, the company continues to lead by integrating advanced AI and Cloud computing to streamline the global supply chain, maintaining its status as a titan of modern commerce\n\n\t5. Name: Vijay Prajapati | Rating: 5\nNice campus. Location is plus point. You will find all the necessary things within the campus. Other than this all other things you can also find nearby like restaurant, saloon, banks etc. Campus is well maintained and high tech . I love this place \u2764\ufe0f\n\n",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Google Rating Validation",
+      "kpi_data": null
+    }
+  ],
+  "reg_findings": false,
+  "leg_findings": false,
+  "additional_indicators_findings": true,
+  "additional_indicators_data": [
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1A",
+      "kpi_flag": true,
+      "kpi_details": "High Cyber Risk Rating: 450",
+      "kpi_rating": "High",
+      "kpi_definition": "Cyber Risk Rating Score",
+      "kpi_data": [
+        "High Cyber Risk Rating: 450"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1B",
+      "kpi_flag": true,
+      "kpi_details": "High Implied Cyber Risk",
+      "kpi_rating": "High",
+      "kpi_definition": "Implied Cyber Risk Rating Score",
+      "kpi_data": [
+        "High Implied Cyber Risk"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB2A",
+      "kpi_flag": true,
+      "kpi_details": "Final Cyber Risk Rating: High",
+      "kpi_rating": "High",
+      "kpi_definition": "Overall Cyber Risk Rating",
+      "kpi_data": [
+        "Final Cyber Risk Rating: High"
+      ]
+    }
+  ],
+  "session_id": "de45f0a3-b845-4ab8-b5e1-29301b6a859a",
+  "ens_id": "a8c7ae2f-9f13-436b-ab92-e811d3c2744d",
+  "disable-regulator-and-legal": true
+}

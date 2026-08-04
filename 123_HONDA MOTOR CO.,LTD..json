@@ -1,0 +1,208 @@
+{
+  "date": "4th August, 2026",
+  "risk_level": "High",
+  "summary_of_findings": "According to our risk framework, HONDA MOTOR CO.,LTD. Is classified as high risk, notable public opinion factors along with serious media criticism cited in analyst reports. The company also shows major public sector connections linked with substantial sanctions list implications potentially affecting banking relationships. Another area of note is concerning political relationship disclosures combined with intermediate balance sheet strength impacting business sustainability. Additional assessment reveals the entity's cybersecurity defenses present moderate concerns requiring attention. These findings necessitate thorough monitoring and stringent control measures.",
+  "sanctions_summary": [
+    "There are 1 potential sanctions findings within the corporate group."
+  ],
+  "anti_summary": [
+    "No notable Bribery, Corruption, or Fraud findings for this entity."
+  ],
+  "gov_summary": [
+    "Group / Global Ultimate Owner not found to be state-controlled",
+    "There are 4 PEP findings for the individuals associated with this entity. Some of the most recent PEP events include:\n- Mr Seiji Kuraishi: Potential Political Exposure Findings\n- Mr Masayuki Igarashi: Potential Political Exposure Findings\n",
+    "There are 1 potential PEP findings within the corporate group."
+  ],
+  "financial_summary": [
+    "Current Ratio: Medium (1.28)",
+    "Debt to Equity Ratio: Low (1.05)"
+  ],
+  "adv_summary": [
+    "There are other potential news findings."
+  ],
+  "additional_indicators_summary": [
+    "There are notable findings in cybersecurity screening/profiling for this entity."
+  ],
+  "ral_summary": [
+    "No legal or regulatory findings available."
+  ],
+  "gov_rating": "High",
+  "anti_rating": "No Alerts",
+  "regulatory_and_legal_rating": "Deactivated",
+  "adv_rating": "High",
+  "financial_rating": "Medium",
+  "additional_indicators_rating": "Medium",
+  "esg_rating": "No Alerts",
+  "cyber_rating": "Medium",
+  "sanctions_rating": "High",
+  "entity_existence_rating": "No Alerts",
+  "name": "HONDA MOTOR CO.,LTD.",
+  "google_image_name": "JP6010401027577_573",
+  "location": "TOKYO, Japan",
+  "address": "TOKYO TO, MINATO KU, TORANOMON 2-2-3, 105-0001, TOKYO, Japan",
+  "website": "www.honda.co.jp",
+  "active_status": "Active",
+  "operation_type": "Publicly quoted",
+  "legal_status": "Public limited companies",
+  "national_id": "VAT/Tax number: 6010401027577",
+  "alias": "HONDA GIKEN KOGYO KABUSHIKI KAISHA",
+  "incorporation_date": "24/09/1948",
+  "subsidiaries": "367 entities",
+  "corporate_group": "354 entities",
+  "shareholders": "Other minority shareholders ~97.24%+",
+  "key_exec": "Mr Toshihiro Mibe (Chairman of the Board of Directors, President, Chief Executive Officer, Representative Executive Officer, Director)\n\nMr Toshisuke Akiwa (Executive Officer, Chief Director of Automobile Development Operations)\n\nMr Masayuki Igarashi (Managing Executive Officer, Chief Director of China)\n\nMr Ayumu Matsuo (Managing Executive Officer, Chief Director of Supply Chain Purchasing)\n\nMr Takashi Onuma (Executive Officer, Chief Director of Automobile Production)\n\nMr Manabu Ozawa (Managing Executive Officer, Chief Director of Corporate Strategy, Chief Director of Safe Driving Promotion)\n\nMr Seiji Kuraishi (Chairman, Board of Directors)\n\n\n & 101 more key executives",
+  "revenue": "136B (USD - 2026-03-31)",
+  "employee_count": "194993 employees",
+  "external_vendor_id": "test_6010401027577",
+  "uploaded_name": "Honda Motor Co., Ltd.",
+  "annexure": [
+    {
+      "id": "1",
+      "title": "Full List of Shareholders",
+      "contents": "\n\nDirect Shareholders\n\n\n1. MASTER TRUST BANK OF JAPAN, LTD (18.50%)\n2. MASTER TRUST BANK OF JAPAN LTD (THE) (TRUST ACCOUNT) (17.77%)\n3. SELF OWNED (17.58%)\n4. CUSTODY BANK OF JAPAN,LTD. (7.80%)\n5. CUSTODY BANK OF JAPAN (TRUST ACCOUNT) (6.49%)\n6. MOXLEY & CO LLC (5.30%)\n7. MEIJI YASUDA LIFE INSURANCE CO. (3.50%)\n8. JP MORGAN CHASE BANK 385781 (2.40%)\n9. STATE STREET BANK AND TRUST COMPANY 505001 (2.40%)\n10. STATE STREET BANK WEST CLIENT - TREATY 505234 (2.11%)\n11. BLACKROCK JAPAN CO,LTD. (1.90%)\n12. BLACKROCK FUND ADVISORS (1.69%)\n13. NIPPON LIFE INSURANCE CO. (1.50%)\n14. JP MORGAN SECURITIES JAPAN CO LTD (1.49%)\n15. AXA LIFE INSURANCE CO., LTD. (1.31%)\n16. GOVERNMENT OF NORWAY (1.10%)\n17. BLACKROCK INSTITUTIONAL TRUST COMPANY NATIONAL ASSOCIATION (1.08%)\n18. THE NOMURA TRUST AND BANKING CO., LTD. (1.00%)\n19. BLACKROCK ASSET MANAGEMENT IRELAND LIMITED (0.59%)\n20. BLACKROCK FUND MANAGERS LIMITED (0.40%)\n21. BLACKROCK (NETHERLANDS) B.V. (0.23%)\n22. TS TECH CO., LTD. (0.20%)\n23. BLACKROCK INVESTMENT MANAGEMENT (UK) LIMITED (0.14%)\n24. APERIO GROUP, LLC (0.09%)\n25. BLACKROCK ASSET MANAGEMENT CANADA LIMITED / GESTION D'ACTIFS BLK (0.08%)\n26. STEEL CENTER CO.,LTD. (0.08%)\n27. YAMADA MANUFACTURING CO.,LTD. (0.08%)\n28. BLACKROCK INVESTMENT MANAGEMENT, LLC (0.07%)\n29. G-TEKT CORPORATION (0.07%)\n30. ASTEMO,LTD. (0.06%)\n31. BLACKROCK ADVISORS LLC (0.06%)\n32. BLACKROCK LIFE LTD (0.06%)\n33. EQUITY INVESTMENT CORP (0.04%)\n34. ILMARINEN MUTUAL PENSION INSURANCE CO. (0.04%)\n35. AIKITEC CO.,LTD. (0.03%)\n36. K.K. HONDA CARS HAKATA (<= 0.01%)\n37. LMR PARTNERS LLP (<= 0.01%)\n38. SOGO JIMU SERVICE CO.,LTD. (<= 0.01%)\n\n\n\nOther Shareholders\n\n\n1. THE VANGUARD GROUP, INC.\n2. NOMURA ASSET MANAGEMENT CO., LTD.\n3. DODGE & COX\n4. FIDELITY MANAGEMENT & RESEARCH COMPANY LLC\n5. TOKIO MARINE HOLDINGS INC.\n6. AMOVA ASSET MANAGEMENT CO., LTD.\n7. MITSUBISHI UFJ FINANCIAL GROUP, INC.\n8. DAIWA ASSET MANAGEMENT CO.LTD.\n9. DIMENSIONAL FUND ADVISORS LP\n10. CHARLES SCHWAB INVESTMENT MANAGEMENT, INC.\n11. MITSUBISHI UFJ ASSET MANAGEMENT CO., LTD.\n12. J.P. MORGAN INVESTMENT MANAGEMENT INC.\n13. SOMPO HOLDINGS INC.\n14. TEMPLETON GLOBAL ADVISORS LIMITED\n15. MS&AD INSURANCE GROUP HOLDINGS INC.\n16. OLIVE STREET INVESTMENT ADVISERS LLC\n17. ALLIANCEBERNSTEIN LP\n18. SOMPO JAPAN INSURANCE (NEW) TRUST\n19. SSGA FUNDS MANAGEMENT, INC.\n20. BLACKROCK ADVISORS (UK) LIMITED\n21. WISDOMTREE ASSET MANAGEMENT, INC.\n22. APG ASSET MANAGEMENT N.V.\n23. T. ROWE PRICE ASSOCIATES, INC.\n24. TEACHERS ADVISORS, LLC\n25. ASSET MANAGEMENT ONE CO.,LTD.\n26. TIAA-CREF INVESTMENT MANAGEMENT LLC\n27. STANLEY ELECTRIC CO., LTD.\n28. VANGUARD GLOBAL ADVISERS, LLC.\n29. DENSO CORPORATION\n30. DAIDO STEEL CO.,LTD.\n31. WELLINGTON MANAGEMENT GROUP LLP\n32. BOSTON PARTNERS LLC\n33. NIPPON SEIKI CO.,LTD.\n34. AGC INC.\n35. NIKKON HOLDINGS CO LTD\n36. TODA CORPORATION\n37. GOLDMAN SACHS ASSET MANAGEMENT L.P.\n38. SUMITOMO RUBBER INDUSTRIES PENSION FUND\n39. THE YOKOHAMA RUBBER CO.,LTD.\n40. AMUNDI ASSET MANAGEMENT\n41. LINCOLN FINANCIAL INVESTMENTS CORPORATION\n42. NIPPON STEEL PENSION FUND\n43. NITERRA CO.,LTD.\n44. DWS INVESTMENTS UK LIMITED\n45. HI-LEX CORPORATION\n46. TOPPAN HOLDINGS INC.\n47. NOK CORPORATION\n48. FRANKLIN ADVISORY SERVICES LLC\n49. SHINDENGEN ELECTRIC MANUFACTURING CO LTD\n50. AMERICAN CENTURY INVESTMENT MANAGEMENT INC\n51. BT ADVISORS, INC.\n52. DAIDO KOGYO CO., LTD.\n53. MITSUBA CORPORATION\n54. HITACHI,LTD.\n55. JFE STEEL TRUST\n56. SUMITOMO ELECTRIC INDUSTRIES,LTD.\n57. TEMPLETON INVESTMENT COUNSEL, INC.\n58. EQUITABLE INVESTMENT MANAGEMENT GROUP, LLC\n59. MASON STREET ADVISORS LLC\n60. MATTHEWS INTERNATIONAL CAPITAL MANAGEMENT, LLC\n61. MITSUI OSK LINES PENSION FUND\n62. NORTHERN TRUST INVESTMENTS INC\n63. STATE STREET GLOBAL ADVISORS LIMITED\n64. VOYA INVESTMENTS LLC\n65. BRANDES INVESTMENT PARTNERS, L.P.\n66. JACKSON NATIONAL ASSET MANAGEMENT\n67. MERCER INVESTMENT MANAGEMENT, INC.\n68. MONDRIAN INVESTMENT PARTNERS LIMITED\n69. MORIROKU COMPANY,LTD.\n70. NIPPON PAINT HOLDINGS CO.,LTD.\n71. NPR-RIKEN NIIGATA CORPORATION\n72. POLARIS CAPITAL MANAGEMENT, LLC\n73. ALLSPRING GLOBAL INVESTMENTS, LLC\n74. AQR CAPITAL MANAGEMENT LLC\n75. EMPOWER CAPITAL MANAGEMENT, LLC\n76. ENEOS HOLDINGS, INC.\n77. HONDA MOTOR BOARD INCENTIVE PLAN\n78. IDEMITSU KOSAN PENSION FUND\n79. INVESCO CAPITAL MANAGEMENT LLC\n80. J.P. MORGAN PRIVATE INVESTMENTS INC.\n81. KANSAI PAINT CO.,LTD.\n82. MEIKO TRANS CO.,LTD.\n83. NHK SPRING PENSION FUND\n84. NITTAN CORPORATION\n85. PANASONIC TRUST\n86. SAWAFUJI ELECTRIC CO.,LTD.\n87. SHIMIZU CORPORATION\n88. SUMITOMO MITSUI TRUST BANK PENSION FUND\n89. BESSEMER INVESTMENT MANAGEMENT LLC\n90. GEODE CAPITAL MANAGEMENT LLC\n91. GRANTHAM, MAYO, VAN OTTERLOO & CO. LLC\n92. JOHN HANCOCK VARIABLE TRUST ADVISERS LLC\n93. NATIONWIDE FUND ADVISORS\n94. NOF CORPORATION\n95. THRIVENT ASSET MANAGEMENT, LLC\n96. VICTORY CAPITAL HOLDINGS, INC.\n97. GLOBAL X MANAGEMENT COMPANY LLC\n98. IMASEN ELECTRIC INDUSTRIAL CO., LTD.\n99. MANULIFE INVESTMENT MANAGEMENT (US) LLC\n100. MUTUAL OF AMERICA CAPITAL MANAGEMENT LLC\n101. PARAMETRIC PORTFOLIO ASSOCIATES LLC\n102. ROBERT W. BAIRD & CO. INCORPORATED\n103. RUSSELL INVESTMENT MANAGEMENT, LLC\n104. STATE STREET GLOBAL ADVISORS EUROPE LIMITED\n105. STRATEGIC ADVISERS LLC\n106. BRIGHTHOUSE INVESTMENT ADVISERS, LLC\n107. DAIDO STEEL PENSION FUND\n108. FIRST TRUST ADVISORS L P\n109. MASSACHUSETTS FINANCIAL SERVICES COMPANY\n110. NACHI-FUJIKOSHI CORP.\n111. NISSIN CORPORATION\n112. NISSIN PENSION FUND\n113. NUVEEN FUND ADVISORS, LLC\n114. THE VARIABLE ANNUITY LIFE INSURANCE COMPANY\n115. THRIVENT FINANCIAL FOR LUTHERANS\n116. TOPRE CORPORATION\n117. CARILLON TOWER ADVISERS, INC.\n118. F-TECH INC\n119. FRANKLIN ADVISERS, INC.\n120. HARTFORD FUNDS MANAGEMENT GROUP, INC.\n121. INDEXIQ LLC\n122. KOBE STEEL LTD. PENSION FUND\n123. LEGG MASON PARTNERS FUND ADVISOR, LLC\n124. MR TOSHIHIRO MIBE\n125. NISHIKAWA RUBBER CO.,LTD.\n126. NPR-RIKEN PRECISION CORPORATION\n127. NTN PENSION FUND\n128. PACIFIC LIFE FUND ADVISORS LLC\n129. PGIM INVESTMENT LLC\n130. SEI INVESTMENTS MANAGEMENT CORPORATION\n131. SUNAMERICA ASSET MANAGEMENT, LLC\n132. TACHI-S CO.,LTD.\n133. TPR CO LTD\n134. WELLS FARGO FUNDS MANAGEMENT LLC\n135. ALLIANZ GLOBAL INVESTORS GMBH\n136. ALTAIR ADVISERS LLC\n137. BNY MELLON ETF INVESTMENT ADVISER, LLC\n138. BNY MELLON INVESTMENT ADVISER, INC.\n139. CHUO SPRING CO.,LTD.\n140. CONSULTING GROUP ADVISORY SERVICES LLC\n141. DAIDO METAL PENSION FUND\n142. EVERENCE CAPITAL MANAGEMENT, INC.\n143. GS YUASA CORPORATION\n144. GUIDESTONE CAPITAL MANAGEMENT, LLC\n145. HARRIS ASSOCIATES LP\n146. INNOVATOR CAPITAL MANAGEMENT, LLC\n147. IYOGIN HOLDINGS, INC.\n148. LATTICE STRATEGIES LLC\n149. LSV ASSET MANAGEMENT\n150. MASAYUKI IGARASHI\n151. MORNINGSTAR INVESTMENT MANAGEMENT LLC\n152. MR KATSUSHI INOUE\n153. MR KEIJI OTSU\n154. MR NORIYA KAIHARA\n155. MRS ASAKO SUZUKI\n156. NHK SPRING CO LTD\n157. NIFCO INC.\n158. OHIO NATIONAL INVESTMENTS INC\n159. ORION PORTFOLIO SOLUTIONS LLC\n160. PACIFIC INVESTMENT MANAGEMENT CO LLC\n161. PERPETUAL US SERVICES, LLC\n162. PGIM QUANTITATIVE SOLUTIONS LLC\n163. PUTNAM INVESTMENT MANAGEMENT, LLC\n164. SAKURAI LTD.\n165. SECURITY INVESTORS, LLC\n166. STERLING CAPITAL MANAGEMENT LLC\n167. TOENEC CORPORATION\n168. TOUCHSTONE SECURITIES INC\n169. TRANSAMERICA ASSET MANAGEMENT, INC.\n170. WILMINGTON FUNDS MANAGEMENT CORPORATION\n171. ABRDN JAPAN INVESTMENT TRUST PLC\n172. AHRESTY CORPORATION\n173. AKEBONO BRAKE INDUSTRY CO.,LTD.\n174. ALPHA CORPORATION\n175. ASHIMORI INDUSTRY CO LTD\n176. ASSETMARK, INC.\n177. BLACKROCK ASSET MANAGEMENT DEUTSCHLAND AG\n178. BLACKROCK INVESTMENT MANAGEMENT (AUSTRALIA) LIMITED\n179. BOSTON MANAGEMENT AND RESEARCH\n180. CALVERT RESEARCH AND MANAGEMENT\n181. CLEARBRIDGE INVESTMENTS LLC\n182. DAI NIPPON TORYO CO LTD\n183. DAIDO METAL CO., LTD.\n184. DAIFUKU CO.,LTD.\n185. DAIKI ALUMINIUM INDUSTRY CO.,LTD.\n186. DENTSU SOKEN INC.\n187. DUNHAM & ASSOCIATES INVESTMENT COUNSEL, INC.\n188. DWS INVESTMENT GMBH\n189. DWS INVESTMENT MANAGEMENT AMERICAS, INC.\n190. EATON VANCE MANAGEMENT INC.\n191. EQUITABLE INVESTMENT MANAGEMENT, LLC\n192. EXEDY CORPORATION\n193. FAITH INVESTOR SERVICES LLC\n194. FALTEC CO.,LTD.\n195. FRANKLIN TEMPLETON INVESTMENTS CORP\n196. FUJIKURA LTD\n197. GLENMEDE INVESTMENT MANAGEMENT LP\n198. GLOBAL ATLANTIC INVESTMENT ADVISORS, LLC\n199. HIRTLE CALLAGHAN & CO., LLC\n200. HORIBA,LTD.\n201. IBIDEN CO.,LTD.\n202. INTERNATIONAL CONGLOMERATE OF DISTRIBUTION FOR AUTOMOBILE HOLDINGS CO., LTD.\n203. INVESCO ADVISERS, INC.\n204. J-MAX CO.,LTD.\n205. JOHN HANCOCK INVESTMENT MANAGEMENT LLC\n206. JPMORGAN ASSET MANAGEMENT (UK) LIMITED\n207. JPMORGAN CHASE & CO\n208. KASAI KOGYO CO.,LTD.\n209. KAYNE ANDERSON RUDNICK INVESTMENT MANAGEMENT, LLC\n210. KOITO MANUFACTURING CO., LTD.\n211. LAZARD ASSET MANAGEMENT LLC\n212. LEGAL & GENERAL INVESTMENT MANAGEMENT AMERICA, INC.\n213. MASAO KAWAGUCHI\n214. MEIWA INDUSTRY CO.,LTD.\n215. MITSUBOSHI BELTING LTD.\n216. MML INVESTMENT ADVISERS, LLC\n217. MR AKIWA TOSHIHIRO\n218. MR AYUMU MATSUO\n219. MR DAIKI MIHARA\n220. MR EIJI FUJIMURA\n221. MR FUMIYA KOKUBU\n222. MR HIRONAO ITO\n223. MR IKUO TAKEISHI\n224. MR JIRO MORISAWA\n225. MR KATSUTO HAYASHI\n226. MR KAZUHIRO HIGASHI\n227. MR KAZUHIRO TAKIZAWA\n228. MR KEIJI OHTSU\n229. MR KENSUKE OE\n230. MR KOHEI TAKEUCHI\n231. MR KUNIHIKO SAKAI\n232. MR MANABU OZAWA\n233. MR MIKA AGATSUMA\n234. MR MINORU KATO\n235. MR NORIAKI ABE\n236. MR SEIJI KURAISHI\n237. MR TAKASHI IMAI\n238. MR TAKASHI ONUMA\n239. MR YOICHIRO OGAWA\n240. MR YUTAKA TAMAGAWA\n241. MRS SHINJI AOYAMA\n242. MURAKAMI CORPORATION\n243. NIHON PARKERIZING CO., LTD.\n244. NIHON PLAST CO LTD\n245. NIHON TOKUSHU TORYO CO LTD\n246. OHASHI TECHNICA INC.\n247. OKAMOTO INDUSTRIES, INC.\n248. PARKER CORPORATION\n249. PIOLAX INC\n250. REGENTS PARK FUNDS, LLC\n251. RYOKO NAGATA\n252. SANKO GOSEI LTD\n253. SANOH INDUSTRIAL CO.,LTD.\n254. SCHRODER JAPAN TRUST PLC\n255. SEGALL BRYANT & HAMILL, LLC\n256. SEIREN CO.,LTD.\n257. STATE STREET GLOBAL ADVISORS, AUSTRALIA, LIMITED\n258. SUMINOE CO. LTD.\n259. SUMITOMO RUBBER INDUSTRIES,LTD.\n260. SUZUKI MASAFUMI /HONDA MOTOR\n261. TAKAGI SEIKO CORPORATION\n262. TEMPLE BAR INVESTMENT TRUST PLC\n263. TIGERS POLYMER CORPORATION\n264. TOKAI RIKA CO.,LTD.\n265. UNIPRES CORPORATION\n266. VELA INVESTMENT MANAGEMENT LLC\n267. WILSHIRE ASSOCIATES INCORPORATED\n268. YAMAHA MOTOR CO.,LTD."
+    },
+    {
+      "id": "2",
+      "title": "Key Management Personnel",
+      "contents": "Current Key Executives\n\n\n1. Mr Toshihiro Mibe - Chairman of the Board of Directors, President, Chief Executive Officer, Representative Executive Officer, Director (Board of Directors; Senior management)\n2. Mr Toshisuke Akiwa - Executive Officer, Chief Director of Automobile Development Operations (Senior management; Research & Development / Engineering; Operations & Production & Manufacturing)\n3. Mr Masayuki Igarashi - Managing Executive Officer, Chief Director of China (Senior management; Product/Project/Market Management)\n4. Mr Ayumu Matsuo - Managing Executive Officer, Chief Director of Supply Chain Purchasing (Senior management; Operations & Production & Manufacturing; Purchasing & Procurement)\n5. Mr Takashi Onuma - Executive Officer, Chief Director of Automobile Production (Senior management; Operations & Production & Manufacturing)\n6. Mr Manabu Ozawa - Managing Executive Officer, Chief Director of Corporate Strategy, Chief Director of Safe Driving Promotion (Senior management)\n7. Mr Seiji Kuraishi - President / Chairman (Board of Directors)\n8. Mr Kensuke Oe - Managing Executive Officer, President of Subsidiary (Senior management)\n9. Mr Mika Agatsuma - Outside Director/Non-Executive Director; Director (Board of Directors)\n10. Mr Toshihiro Akiwa - Unspecified executive (Senior management)\n11. Mr Katsutoshi Hayashi - Unspecified executive (Senior management)\n12. Mr Takashi Imai - Unspecified executive (Senior management)\n13. Mr Hironao Ito - Unspecified executive (Senior management)\n14. Mr Minoru Kato - Unspecified executive (Senior management)\n15. Mr Masao Kawaguchi - Unspecified executive (Senior management)\n16. Mr Mitsugu Matsukawa - Unspecified executive (Senior management)\n17. Mr Daiki Mihara - Unspecified executive; Executive Product/Project/Market management; Operations & Production executive (Senior management; Product/Project/Market Management; Operations & Production & Manufacturing)\n18. Onuma Takashi - Unspecified executive (Senior management)\n19. Mr Ikuo Takeuchi - Unspecified executive (Senior management)\n20. Mr Kazuhiro Takizawa - Unspecified executive (Senior management)\n21. Mr Yutaka Tamagawa - Unspecified executive (Senior management)\n22. Mr Seiji Kuraishi - Owners / Partners / Shareholders / Founders\n23. Mr Shinji Aoyama - Member (Board of Directors)\n24. Mr Eiji Fujimura - Member (Board of Directors)\n25. Mr Kazuhiro Higashi - Member (Board of Directors)\n26. Mr Katsushi Inoue - Member (Board of Directors)\n27. Mr Noriya Kaihara - Member (Board of Directors)\n28. Mr Fumiya Kokubu - Member (Board of Directors)\n29. Mr Jiro Na Morisawa - Member (Board of Directors)\n30. Ms Ryoko Nagata - Member (Board of Directors)\n31. Mr Yoichiro Ogawa - Member (Board of Directors)\n32. Mr Kunihiko Sakai - Member (Board of Directors)\n33. Mr Yoichiro Stream - Member (Board of Directors)\n34. Mr Masafumi Suzuki - Member (Board of Directors)\n35. Ms Asako Suzuki - Member (Board of Directors)\n36. Mr Kohei Takeuchi - Owners / Partners / Shareholders / Founders\n37. Mr Kohei Takeuchi - Member (Board of Directors)\n38. Sanjia Wagatsuma - Member (Board of Directors)\n39. Mr Noriaki Abe - Owners / Partners / Shareholders / Founders\n40. Mr Keiji Ohtsu - Owners / Partners / Shareholders / Founders\n41. KPMG AZSA & CO - Auditor (Advisors)\n42. HIGO BANK - Banker (Advisors)\n43. MITSUBISHI UFJ TRUST AND BANKING, H.O. - Banker (Advisors)\n44. MIZUHO BANK, H.O. - Banker (Advisors)\n45. MUFG BANK, H.O. - Banker (Advisors)\n46. NORIN CHUKIN BANK - Banker (Advisors)\n47. SAITAMA RESONA BANK, TOKYO - Banker (Advisors)\n\n\nPrevious Key Executives\n\n\n1. Mr Takahiro Hachigo - President, Chief Executive Officer, Representative Director (Senior management)\n2. Mr Yoshi Yamane - Senior Managing Executive Officer, Chief Director of Production, Director (Senior management; Operations & Production & Manufacturing)\n3. Mr Yusuke Horiuchi - Executive Officer, Senior Director of Africa & Middle East; Executive Officer, Chief Director of Customer First, Chief Director of IT (Senior management; Customer Service; Information Technology (IT) & Information Systems (IS))\n4. Mr Hiroyuki Kachi - Executive Officer, Deputy Chief Director of Production (Senior management; Operations & Production & Manufacturing)\n5. Mr Tsuneya Kaibara - Unspecified executive; Chief Customer Service Officer; Customer Service executive (Senior management; Customer Service)\n6. Mr Taro Kobayashi - Managing Executive Officer, Chief Director of Automobile Business, Chief Director of Associated Regi (Senior management)\n7. Mr Naoto Matsui - Executive Officer, Chief Director of IT (Senior management; Information Technology (IT) & Information Systems (IS))\n8. Mr Sho Minekawa - Unspecified executive; Health & Safety Chief Officer; Health & Safety executive (Senior management; Health & Safety)\n9. Mr Issao Mizoguchi - Executive Officer, Chief Director of South America Area, President of Subsidiaries (Senior management; Product/Project/Market Management)\n10. Mr Katsuhide Moriyama - Executive Officer, Chief Director of Brand Communication (Senior management; Marketing & Advertising)\n11. Mr Yoshishige Nomura - Executive Officer, President of Subsidiary; Managing Executive Officer, Chief Director of Two Wheel Vehicle Business; Managing Executive Officer, Chief Director of Motorcycle & Power Products Business (Senior management; Product/Project/Market Management)\n12. Mr Kazuhiro Odaka - Unspecified executive; Human Resource executive; Chief Legal/Compliance/Risk Officer (& General Counsel, Ethics, Compliance, Audit); Legal/Compliance/Risk executive (Senior management; Human Resources (HR); Legal/Compliance/Risk department)\n13. Mr Katsuhisa Okuda - Executive Officer, Manager of Business Administration Office in Main General-Purpose Products Busine; Executive Officer, Chief Director of Life Creation Business (Senior management; Administration department; Product/Project/Market Management)\n14. Mr Toshihiro Sambu - Unspecified executive; Chief Operations & Production Officer; Operations & Production executive (Senior management; Operations & Production & Manufacturing)\n15. Mr Takayoshi Sekiguchi - Managing Executive Officer, Chief Director of Automobile Business, Director (Senior management)\n16. Mr Kimiyoshi Teratani - Executive Officer, Chief Director of Japan (Senior management; Product/Project/Market Management)\n17. Mr Takuji Yamada - Senior Managing Executive Officer, Chief Director of North America Area, President of Subsidiaries (Senior management)\n18. Mr Fumihiko Ike - President / Chairman (Board of Directors)\n19. Mr Toshiaki Mikoshiba - President / Chairman (Board of Directors)\n20. Mr Koichi Fukuo - Senior Managing Executive Officer, President of Subsidiary, Director (Senior management)\n21. Mr Michimasa Fujino - Managing Executive Officer, President of Subsidiary (Senior management; Product/Project/Market Management)\n22. Tomomi Kamisaka - Executive Officer, President of Subsidiary (Senior management; Product/Project/Market Management)\n23. Mr Keiji Otsu - Managing Executive Officer, President of Subsidiary (Senior management)\n24. Mr Soichiro Takizawa - Managing Executive Officer, President of Subsidiary (Senior management)\n25. Mr Shoichi Yamamoto - Executive Officer, Director of Saitama Manufacturing Plant in Main Production Unit, President of Sub (Senior management; Product/Project/Market Management; Operations & Production & Manufacturing)\n26. Mr Tetsuo Iwamura - Vice President (Senior management)\n27. Mr Yoshiyuki Matsumoto - Highest executive (Senior management)\n28. Mr Yasuhide Mizuno - Highest executive (Senior management)\n29. Mr Hisao Takahashi - Highest executive; Operations & Production manager (Senior management; Operations & Production & Manufacturing)\n30. Mr Yasushi Yamane - Highest executive (Senior management)\n31. Mr Hiroshi Tokutake - Unspecified executive; Product/Project/Market manager (Senior management; Product/Project/Market Management)\n32. Ko Katayama - Unspecified executive (Senior management)\n33. Mr Tomomi Kosaka - Unspecified executive (Senior management)\n34. Mr Yoshikado Nakao - Unspecified executive (Senior management)\n35. Mr Toshiyuki Shimabara - Unspecified executive (Senior management)\n36. Mr Tetsuo Suzuki - Unspecified executive (Senior management)\n37. Mr Chitoshi Yokota - Unspecified executive (Senior management)\n38. Mr Toshiaki Hiwatari - Member (Board of Directors)\n39. Mr Takanobu Ito - Member (Board of Directors)\n40. Ms Hiroko Koide - Member (Board of Directors)\n41. Dr. Hideko Kunii - Member (Board of Directors)\n42. Mr Nobuo Kuroyanagi - Member (Board of Directors)\n43. Mr Toshihiko Nonaka - Member (Board of Directors)\n44. Mr Motoki Ozaki - Member (Board of Directors)\n45. Mr Yuji Shiga - Member (Board of Directors)\n46. Mr Hideo Takaura - Member (Board of Directors)\n47. Ms Mayumi Tamura - Member (Board of Directors)\n48. Mr Takashi Yamamoto - Member (Board of Directors)\n49. Mr Yoshiharu Yamamoto - Member (Board of Directors)\n50. Mr Masahiro Yoshida - Member (Board of Directors)\n51. Mr Hirotake Abe - Internal auditor (Senior management)\n52. Mr Kunio Endo - Internal auditor (Senior management)\n53. Mr Tomochika Iwashita - Internal auditor (Senior management)\n54. Mr Masaya Yamashita - Internal auditor (Senior management)\n55. AZSA AUDIT CORP. - Auditor (Advisors)\n56. KPMG LLP - Auditor (Advisors)\n57. KPMG PEAT MARWICK - Auditor (Advisors)\n58. SHIN NIHON & CO. - Auditor (Advisors)\n59. BANK OF TOKYO-MITSUBISHI UFJ, H.O. - Banker (Advisors)\n60. SUMITOMO MITSUI BANKING, H.O. - Banker (Advisors)\n61. JPMorgan Chase Bank, N.A. - Transfer agent (Advisors)"
+    }
+  ],
+  "sanctions_findings": true,
+  "sape_data": [
+    {
+      "kpi_area": "SAN",
+      "kpi_code": "SAN3A",
+      "kpi_flag": true,
+      "kpi_details": "Sanctions or watchlist exposure identified among following members of the corporate group:\n1. Ultimately Owned Subsidiaries: HONDA DEL PERU S.A (N/A) - Sanctions/Watchlist exposure\n",
+      "kpi_rating": "High",
+      "kpi_definition": "Associated Corporate Group - Sanctions Exposure",
+      "kpi_data": [
+        "Ultimately Owned Subsidiaries: HONDA DEL PERU S.A (N/A) - Sanctions/Watchlist exposure"
+      ]
+    }
+  ],
+  "bribery_findings": false,
+  "corruption_findings": false,
+  "financial_findings": true,
+  "financial_data": [
+    {
+      "kpi_area": "BKR",
+      "kpi_code": "BKR5A",
+      "kpi_flag": true,
+      "kpi_details": "Current Ratio: Medium (1.28)",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Current Ratio",
+      "kpi_data": [
+        "Current Ratio: Medium (1.28)"
+      ]
+    },
+    {
+      "kpi_area": "BKR",
+      "kpi_code": "BKR6A",
+      "kpi_flag": true,
+      "kpi_details": "Debt to Equity Ratio: Low (1.05)",
+      "kpi_rating": "Low",
+      "kpi_definition": "Debt to Equity Ratio",
+      "kpi_data": [
+        "Debt to Equity Ratio: Low (1.05)"
+      ]
+    }
+  ],
+  "sown_findings": true,
+  "sown_data": [
+    {
+      "kpi_area": "PEP",
+      "kpi_code": "PEP1B",
+      "kpi_flag": true,
+      "kpi_details": "Following PeP findings :\n1. Mr Seiji Kuraishi (Current Key Executive - ): Potential Political Exposure Findings\n2. Mr Masayuki Igarashi (Current Key Executive - Managing Executive Officer, Chief Director of China): Potential Political Exposure Findings\n3. Mr Fumihiko Ike (Previous Key Executive - Chairman): Potential Political Exposure Findings\n4. Mr Yasuhide Mizuno (Previous Key Executive - Senior Managing Executive Officer): Potential Political Exposure Findings\n",
+      "kpi_rating": "High",
+      "kpi_definition": "PeP for Direct Affiliations -  Person Level",
+      "kpi_data": [
+        "Mr Seiji Kuraishi (Current Key Executive - ): Potential Political Exposure Findings",
+        "Mr Masayuki Igarashi (Current Key Executive - Managing Executive Officer, Chief Director of China): Potential Political Exposure Findings",
+        "Mr Fumihiko Ike (Previous Key Executive - Chairman): Potential Political Exposure Findings",
+        "Mr Yasuhide Mizuno (Previous Key Executive - Senior Managing Executive Officer): Potential Political Exposure Findings"
+      ]
+    },
+    {
+      "kpi_area": "PEP",
+      "kpi_code": "PEP3A",
+      "kpi_flag": true,
+      "kpi_details": "PEP exposure identified among following members of the corporate group:\n1. Global Ultimate Owner: HONDA MOTOR CO.,LTD. (100.00%) - PEP exposure\n",
+      "kpi_rating": "High",
+      "kpi_definition": "Associated Corporate Group - PeP/SOE Exposure",
+      "kpi_data": [
+        "Global Ultimate Owner: HONDA MOTOR CO.,LTD. (100.00%) - PEP exposure"
+      ]
+    }
+  ],
+  "corporate_ownership_findings": false,
+  "adv_findings": true,
+  "adv_data": [
+    {
+      "kpi_area": "ONF",
+      "kpi_code": "ONF1A",
+      "kpi_flag": true,
+      "kpi_details": "Other News Findings are as follows:\n1. Mitsubishi Estate (8802.T) is trading -2.09 percent lower on Friday 10th of July and has a trading volume of JPY 12.3 bn: ['Market and exchange news', 'Securities market'] - Mitsubishi Estate (8802.T) traded down -2.09 % during a 24 hours period ending at 06:17 AM Central Europe on Friday 10th. One Mitsubishi Estate stock can currently be bought for about JPY 4,143 on popular exchanges. Current supply of Mitsubishi [...] \n Source:Acquire Media | Publication: ACI Information Group | (Date: 2026-07-10)\n2. WFTS Programming from 01:44 to 01:49 in US/Eastern: None - and I love what you're able to involved. Thank you to the both of you. MerryChristmas in July, right? Now is the time to start looking out for deals, off to college next month. >> And here to tell us [...] \n Source:Acquire Media | Publication: None | (Date: 2026-07-10)\n3. CR\u2011V e:HEV: Honda's hybrid edge: ['Society and human interest'] - EARLIER this year, Honda Cars Philippines Inc. (HCPI) rolled out the New Honda CR-V in three fresh trims, headlined by two e:HEV full-hybrid options-the 2.0 VX e:HEV E-CVT and 2.0 RS e:HEV AWD E-CVT. To put them to the test, [...] \n Source:Acquire Media | Publication: SyndiGate Media Inc. - Business Mirror (Philippines) | (Date: 2026-07-10)\n4. With a trading volume of JPY 17.2 bn 6702.T trades -1.12 percent lower today: ['Market and exchange news', 'Securities market', 'Science and technology'] - Fujitsu (6702.T) traded down -1.12 % during a 24 hours period ending at 08:53 PM Central Europe on Thursday 9th. One Fujitsu stock can currently be bought for about JPY 3,378 on popular exchanges. Current supply of Fujitsu stocks is [...] \n Source:Acquire Media | Publication: ACI Information Group | (Date: 2026-07-09)\n5. With a trading volume of JPY 25.6 bn 2802.T trades -2.21 percent lower today: ['Market and exchange news', 'Securities market'] - Ajinomoto (2802.T) traded down -2.21 % during a 24 hours period ending at 06:11 PM Central Europe on Thursday 9th. One Ajinomoto stock can currently be bought for about JPY 5,815 on popular exchanges. Current supply of Ajinomoto stocks is [...] \n Source:Acquire Media | Publication: ACI Information Group | (Date: 2026-07-09)\n",
+      "kpi_rating": "High",
+      "kpi_definition": "Other News Findings",
+      "kpi_data": [
+        "Mitsubishi Estate (8802.T) is trading -2.09 percent lower on Friday 10th of July and has a trading volume of JPY 12.3 bn: ['Market and exchange news', 'Securities market'] - Mitsubishi Estate (8802.T) traded down -2.09 % during a 24 hours period ending at 06:17 AM Central Europe on Friday 10th. One Mitsubishi Estate stock can currently be bought for about JPY 4,143 on popular exchanges. Current supply of Mitsubishi [...] \n Source:Acquire Media | Publication: ACI Information Group | (Date: 2026-07-10)",
+        "WFTS Programming from 01:44 to 01:49 in US/Eastern: None - and I love what you're able to involved. Thank you to the both of you. MerryChristmas in July, right? Now is the time to start looking out for deals, off to college next month. >> And here to tell us [...] \n Source:Acquire Media | Publication: None | (Date: 2026-07-10)",
+        "CR\u2011V e:HEV: Honda's hybrid edge: ['Society and human interest'] - EARLIER this year, Honda Cars Philippines Inc. (HCPI) rolled out the New Honda CR-V in three fresh trims, headlined by two e:HEV full-hybrid options-the 2.0 VX e:HEV E-CVT and 2.0 RS e:HEV AWD E-CVT. To put them to the test, [...] \n Source:Acquire Media | Publication: SyndiGate Media Inc. - Business Mirror (Philippines) | (Date: 2026-07-10)",
+        "With a trading volume of JPY 17.2 bn 6702.T trades -1.12 percent lower today: ['Market and exchange news', 'Securities market', 'Science and technology'] - Fujitsu (6702.T) traded down -1.12 % during a 24 hours period ending at 08:53 PM Central Europe on Thursday 9th. One Fujitsu stock can currently be bought for about JPY 3,378 on popular exchanges. Current supply of Fujitsu stocks is [...] \n Source:Acquire Media | Publication: ACI Information Group | (Date: 2026-07-09)",
+        "With a trading volume of JPY 25.6 bn 2802.T trades -2.21 percent lower today: ['Market and exchange news', 'Securities market'] - Ajinomoto (2802.T) traded down -2.21 % during a 24 hours period ending at 06:11 PM Central Europe on Thursday 9th. One Ajinomoto stock can currently be bought for about JPY 5,815 on popular exchanges. Current supply of Ajinomoto stocks is [...] \n Source:Acquire Media | Publication: ACI Information Group | (Date: 2026-07-09)"
+      ]
+    },
+    {
+      "kpi_area": "NWS",
+      "kpi_code": "NWS2A",
+      "kpi_flag": true,
+      "kpi_details": "Name: HONDA MOTOR CO., LTD.\nRating: 3.8\nNumber of Reviews: 431\n\n\nReviews:\n\t1. Name: Satoshi | Rating: 5\nHonda engines have been an absolute dream for decades! Living in Germany, I can attest to the outstanding quality of these engines; they reliably do their job and stand for quality and performance like few other brands. My wife and I are absolutely thrilled with the design of the new Prelude! A masterpiece of form\u2014fantastic. A dream car. I hope that one day we\u2019ll be able to afford this car, even if it might take a long time given the high inflation here in Germany and the fact that we are currently caring for a family member with serious health needs, making things difficult right now. We saw this model in person and were blown away! It is currently one of the most beautiful road-legal cars out there. I\u2019ve loved Honda cars since I was a small child, and Honda motorcycles are of excellent quality too\u2014just think of the old and new Rebel models; fantastic bikes! You do amazing work, and my wife, my children, and I want to offer you our highest praise for being a part of our lives for decades \ud83d\ude4f\ud83c\udffb Thank you, Honda, for top-notch work \ud83d\udd25 Greetings with Love and Respect from Germany \ud83d\ude4f\ud83c\udffb\n\n\t2. Name: Grant Wroe | Rating: 4\nThe time I went there was only the ground floor available for viewing so please check the website to see what's going on. There were vehicles outside that you could view but unfortunately it was a bit of a letdown but that's just down to my error.\nThe imperial Park across the road from it is Handy but make sure you can view this as this was also closed off to the public but back open in  April\n\n\t3. Name: Faisal Khan | Rating: 1\nI have been trying to reach out to you guys but it seems like there is no email address mentioned anywhere, my issue is simple, I purchased a Car and an issue arises in it.\n\nFollowing the normal procedure I made a complaint, the company said yes we will replace the part. Now its been three months already and the company is saying you may need to wait till April 2026 and its not confirmed that you will get the part replaced even at that time.\n\nRegardless of how good the car is, once an issue arise, the company is known for its after sales services. Do you seriously assume that waiting for 7 Months to get one suspension part replaced is a justified timeline in any way?\n\nPathetic services. You really need to change your management.\n\n\t4. Name: M Faizal Ariffin | Rating: 1\nHaving previously driven the Honda Concerto, Fit, Civic and Vezel without issues, I am disappointed at the quality issues with my current HRV (2021 model).\n\nWith Honda cars it seems that all is good when the car has no issue.  But if we are unlucky enough to get a problematic build, Honda will not go the extra mile to support the authorized distributor to resolve it.\n\nThe reason provided for not being able to solve the rattling sound coming from the engine is: \"there's no technical fault code or error hence not enough data to support\".\n\nUnfortunately customer driving experience is not important to Honda at all.  There are many moving parts and issues that sensors are not available and/or able to detect and capture technical data.  It doesn't mean the issue doesn't exist.\n\nNext car will definitely not be a Honda.\n\n\t5. Name: Arkadiusz Goszczak | Rating: 5\nThe Honda HQ is just the HQ offices. There are no exhibits, nothing to see. The exhibition was at the Honda welcome plaza which is permanently closed for rebuilding.\n\n",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Google Rating Validation",
+      "kpi_data": null
+    }
+  ],
+  "reg_findings": false,
+  "leg_findings": false,
+  "additional_indicators_findings": true,
+  "additional_indicators_data": [
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1A",
+      "kpi_flag": true,
+      "kpi_details": "Medium Cyber Risk Rating: 680",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Cyber Risk Rating Score",
+      "kpi_data": [
+        "Medium Cyber Risk Rating: 680"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1B",
+      "kpi_flag": true,
+      "kpi_details": "High Implied Cyber Risk",
+      "kpi_rating": "High",
+      "kpi_definition": "Implied Cyber Risk Rating Score",
+      "kpi_data": [
+        "High Implied Cyber Risk"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB2A",
+      "kpi_flag": true,
+      "kpi_details": "Final Cyber Risk Rating: Medium",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Overall Cyber Risk Rating",
+      "kpi_data": [
+        "Final Cyber Risk Rating: Medium"
+      ]
+    }
+  ],
+  "session_id": "d9bbc84d-8c99-443e-8a8f-dd67b8fa344c",
+  "ens_id": "a76c5e28-ec14-4043-9e9a-53239b33fddd",
+  "disable-regulator-and-legal": true
+}

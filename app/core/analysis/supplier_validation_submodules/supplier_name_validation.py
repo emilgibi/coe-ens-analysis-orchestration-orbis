@@ -3,7 +3,7 @@
 # Imports 
 import json
 import openai
-from openai import OpenAI
+from openai import AzureOpenAI
 from dotenv import load_dotenv
 import os
 
@@ -28,28 +28,16 @@ API_KEY= os.getenv("OPENAI__API_KEY")
 CONFIG=os.getenv("OPENAI__CONFIG")
 SCRAPER=os.getenv("SCRAPER__SCRAPER_URL")
 
-# Overridable via env so switching models in future (e.g. moving off the
-# old gpt-4-32k/gpt-4o deployments to the new Foundry gpt-5.1 deployment)
-# doesn't require another code change. Falls back to the previous
-# hardcoded gpt-4-32k/gpt-4o selection logic only if
-# OPENAI__MODEL_DEPLOYMENT_NAME isn't set.
 require_llm_response_speed = True
-model_deployment_name = os.getenv("OPENAI__MODEL_DEPLOYMENT_NAME")
-if not model_deployment_name:
-    if require_llm_response_speed or (CONFIG.lower() == "demo"):
-        model_deployment_name = "gpt-4-32k"
-    else:
-        model_deployment_name = "gpt-4o"
+if require_llm_response_speed or (CONFIG.lower() == "demo"):
+    model_deployment_name = "gpt-4-32k"
+else:
+    model_deployment_name = "gpt-4o"
 
-# Azure OpenAI v1 API (GA since August 2025): plain OpenAI() client
-# pointed at <endpoint>/openai/v1/, api_key passed directly. This
-# replaces the old AzureOpenAI() client + dated api_version parameter
-# (e.g. "2024-07-01-preview") entirely — no api-version string to keep
-# up to date as Azure ships new monthly versions, and it's the path
-# Microsoft is steering all Azure OpenAI usage toward going forward.
-client = OpenAI(
-    base_url=f"{AZURE_ENDPOINT.rstrip('/')}/openai/v1/",
+client = AzureOpenAI(
+    azure_endpoint=AZURE_ENDPOINT,
     api_key=API_KEY,
+    api_version="2024-07-01-preview"
 )
 
 async def supplier_name_validation(data, session, search_engine:str):
@@ -151,7 +139,79 @@ async def supplier_name_validation(data, session, search_engine:str):
         "state": str(incoming_state)
     }
 
-    matched_supplier_data, potential_pass, matched = get_possible_suppliers(match_payload, static_case=False)
+    # ── Pre-fetched cache check ──────────────────────────────────────
+    # orbis_master_data (populated ahead of time by the PythonProject
+    # batch script, in this same production DB) may already have a
+    # resolved match for this entity's uploaded_name — pre-fetched ahead
+    # of live Orbis/TrueSight API access being retired.
+    #
+    # Rather than reverse-engineer Moody's raw TrueSight response shape,
+    # this fabricates a matched_supplier_data dict in that exact same
+    # shape (BVDID / MATCH.0.{SCORE,NAME,ADDRESS,...}) using the cached
+    # row's data, then sets matched/potential_pass exactly as a live
+    # confirmed match would. Every line of code below this point —
+    # building updated_data, writing to upload_supplier_master_data,
+    # the AUTO_ACCEPT/REVIEW status logic — runs completely unchanged
+    # either way, so Entity Name Validation shows and behaves identically
+    # in the UI whether this entity's match came from cache or a live
+    # TrueSight search. Falls through to the existing live search below
+    # if there's no cache hit, so this is purely additive.
+    matched_supplier_data, potential_pass, matched = {}, False, False
+    cache_row = None
+    try:
+        cache_result = await session.execute(
+            text(
+                "SELECT bvd_id, suggested_bvd_id, suggested_name, suggested_country, "
+                "address, national_identifier "
+                "FROM orbis_master_data WHERE uploaded_name = :uploaded_name LIMIT 1"
+            ),
+            {"uploaded_name": incoming_name},
+        )
+        cache_row = cache_result.mappings().first()
+    except Exception as e:
+        logger.warning(f"[SNV] orbis_master_data cache lookup failed (falling back to live search): {e}")
+        cache_row = None
+
+    cached_bvd_id = (cache_row or {}).get("suggested_bvd_id") or (cache_row or {}).get("bvd_id")
+    if cache_row and cached_bvd_id and cached_bvd_id not in ("", "N/A"):
+        logger.info(f"[SNV] cache hit for uploaded_name={incoming_name!r}, using pre-fetched match (bvd_id={cached_bvd_id})")
+        cached_national_id = cache_row.get("national_identifier")
+        if isinstance(cached_national_id, list) and cached_national_id:
+            cached_national_id = cached_national_id[0]
+        elif isinstance(cached_national_id, dict):
+            cached_national_id = next(iter(cached_national_id.values()), None)
+        if not cached_national_id:
+            cached_national_id = "N/A"
+
+        matched_supplier_data = {
+            "BVDID": cached_bvd_id,
+            "MATCH": {
+                "0": {
+                    "HINT": "Selected",
+                    "SCORE": 1.0,
+                    "NAME": cache_row.get("suggested_name") or incoming_name,
+                    "ADDRESS": cache_row.get("address") or "N/A",
+                    "COUNTRY": cache_row.get("suggested_country") or incoming_country,
+                    # These granular contact-detail fields aren't captured
+                    # by the pre-fetch script's own reduced result shape —
+                    # "N/A" here matches exactly what the live path already
+                    # falls back to whenever TrueSight itself doesn't
+                    # return a given field, so this isn't a new kind of gap.
+                    "NAME_INTERNATIONAL": "N/A",
+                    "POSTCODE": "N/A",
+                    "CITY": "N/A",
+                    "PHONEORFAX": "N/A",
+                    "EMAILORWEBSITE": "N/A",
+                    "NATIONAL_ID": cached_national_id,
+                    "STATE": "N/A",
+                }
+            },
+        }
+        matched = True
+        potential_pass = False
+    else:
+        matched_supplier_data, potential_pass, matched = get_possible_suppliers(match_payload, static_case=False)
+    # ── End cache check ──
  
     try:
 
