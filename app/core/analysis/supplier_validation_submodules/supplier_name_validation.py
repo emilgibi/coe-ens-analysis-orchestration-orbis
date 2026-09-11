@@ -140,19 +140,46 @@ async def supplier_name_validation(data, session, search_engine:str):
     }
 
     # ── Pre-fetched cache check ──────────────────────────────────────
-    logger.info(f"[DATA-SOURCE] Step 1 (Name Validation) — checking cache before calling live TrueSight API — uploaded_name={incoming_name!r}")
+    # Two lookup strategies, tried in order:
+    #   1. National ID — authoritative/unique, checked via JSONB containment
+    #      against the national_identifier array (confirmed against live data:
+    #      an array like ["100000000003965", "91100000100003962T", ...]).
+    #   2. uploaded_name exact match — the original fallback, unchanged.
+    # NOTE: the previous version of this query selected a `suggested_country`
+    # column that does not exist on orbis_master_data (it's nested inside the
+    # suggested_details JSONB column instead) — every lookup raised
+    # UndefinedColumnError and was silently treated as a cache miss. Fixed by
+    # only selecting columns that actually exist.
+    logger.info(f"[DATA-SOURCE] Step 1 (Name Validation) — checking cache before calling live TrueSight API — uploaded_name={incoming_name!r} national_id={national_id!r}")
     matched_supplier_data, potential_pass, matched = {}, False, False
     cache_row = None
     try:
-        cache_result = await session.execute(
-            text(
-                "SELECT bvd_id, suggested_bvd_id, suggested_name, suggested_country, "
-                "address, national_identifier "
-                "FROM orbis_master_data WHERE uploaded_name = :uploaded_name LIMIT 1"
-            ),
-            {"uploaded_name": incoming_name},
-        )
-        cache_row = cache_result.mappings().first()
+        if national_id and str(national_id).strip() and str(national_id).strip().upper() not in ("N/A", "NONE"):
+            cache_result = await session.execute(
+                text(
+                    "SELECT bvd_id, suggested_bvd_id, suggested_name, "
+                    "address, national_identifier "
+                    "FROM orbis_master_data "
+                    "WHERE national_identifier @> to_jsonb(CAST(:national_id AS text)) LIMIT 1"
+                ),
+                {"national_id": str(national_id).strip()},
+            )
+            cache_row = cache_result.mappings().first()
+            if cache_row:
+                logger.info(f"[DATA-SOURCE] Step 1 (Name Validation) — cache lookup matched by national_id={national_id!r}")
+
+        if not cache_row:
+            cache_result = await session.execute(
+                text(
+                    "SELECT bvd_id, suggested_bvd_id, suggested_name, "
+                    "address, national_identifier "
+                    "FROM orbis_master_data WHERE uploaded_name = :uploaded_name LIMIT 1"
+                ),
+                {"uploaded_name": incoming_name},
+            )
+            cache_row = cache_result.mappings().first()
+            if cache_row:
+                logger.info(f"[DATA-SOURCE] Step 1 (Name Validation) — cache lookup matched by uploaded_name={incoming_name!r}")
     except Exception as e:
         logger.warning(f"[DATA-SOURCE] Step 1 (Name Validation) — CACHE LOOKUP ERROR — uploaded_name={incoming_name!r} — falling back to live API: {e}")
         # Without this rollback, a failed query here leaves the shared
@@ -169,7 +196,10 @@ async def supplier_name_validation(data, session, search_engine:str):
         cache_row = None
 
     cached_bvd_id = (cache_row or {}).get("suggested_bvd_id") or (cache_row or {}).get("bvd_id")
-    if cache_row and cached_bvd_id and cached_bvd_id not in ("", "N/A"):
+    # "None" (the literal string, not NULL) is how the pre-fetch batch script
+    # records "TrueSight was checked and found no match" — must be treated
+    # as invalid the same as "" / "N/A", or these rows look like false hits.
+    if cache_row and cached_bvd_id and cached_bvd_id not in ("", "N/A", "None"):
         logger.info(f"[DATA-SOURCE] Step 1 (Name Validation) — SERVING FROM DATABASE — live TrueSight API call skipped — uploaded_name={incoming_name!r} bvd_id={cached_bvd_id}")
 
         cached_national_id = cache_row.get("national_identifier")

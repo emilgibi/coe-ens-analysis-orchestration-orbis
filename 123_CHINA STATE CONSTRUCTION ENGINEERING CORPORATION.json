@@ -1,0 +1,187 @@
+{
+  "date": "10th September, 2026",
+  "risk_level": "High",
+  "summary_of_findings": "CHINA STATE CONSTRUCTION ENGINEERING CORPORATION presents an high overall risk profile, concerning sovereign interest presence alongside significant economic restrictions exposure limiting market access. Beyond this, our evaluation found prominent political connection risks plus average profitability indicators affecting cash flow projections. Additional assessment reveals the assessment identified moderate concerns in the entity's cyber risk profile. The assessment results call for specialized monitoring and comprehensive risk reporting.",
+  "sanctions_summary": [
+    "There are 3 potential sanctions findings within the corporate group."
+  ],
+  "anti_summary": [
+    "No notable Bribery, Corruption, or Fraud findings for this entity."
+  ],
+  "gov_summary": [
+    "High risk identified for the entity: Global Ultimate Owner Is Public Authority/State/Government",
+    "There are 5 or more PEP findings for the individuals associated with this entity. Some of the most recent PEP events include:\n- Mr Xuexuan Zheng: Potential Political Exposure Findings\n- Ms Guangxiu Dan: Potential Political Exposure Findings\n",
+    "There are 3 potential PEP findings within the corporate group."
+  ],
+  "financial_summary": [
+    "Current Ratio: Medium (1.16)"
+  ],
+  "adv_summary": [
+    "No adverse media findings."
+  ],
+  "additional_indicators_summary": [
+    "There are notable findings in cybersecurity screening/profiling for this entity."
+  ],
+  "ral_summary": [
+    "No legal or regulatory findings available."
+  ],
+  "gov_rating": "High",
+  "anti_rating": "No Alerts",
+  "regulatory_and_legal_rating": "Deactivated",
+  "adv_rating": "No Alerts",
+  "financial_rating": "Medium",
+  "additional_indicators_rating": "Medium",
+  "esg_rating": "No Alerts",
+  "cyber_rating": "Medium",
+  "sanctions_rating": "High",
+  "entity_existence_rating": "No Alerts",
+  "name": "CHINA STATE CONSTRUCTION ENGINEERING CORPORATION",
+  "google_image_name": "CN9360643481_668",
+  "location": "BEIJING, China",
+  "address": "NO. 15, SANLIHE ROAD, HAIDIAN DISTRICT, 100089, BEIJING, China",
+  "website": "www.cscec.com.cn",
+  "active_status": "Active",
+  "operation_type": "Publicly quoted",
+  "legal_status": "Public limited companies",
+  "national_id": "Trade register number: 100000000001033",
+  "alias": "N/A",
+  "incorporation_date": "24/03/1983",
+  "subsidiaries": "22 entities",
+  "corporate_group": "237220 entities",
+  "shareholders": "Other minority shareholders ~100.0%+",
+  "key_exec": "Mr Xuexuan Zheng (Chairman)\n\nMr Jie Huang (Chief Financial Officer)\n\nMs Guangxiu Dan ()\n\nMr Bing Wen ()\n\nMr Lijie Zhou ()\n\nIndustrial and commercial bank of china, beijing branch million zhuang branch ()\n\n\n & 17 previous key executives",
+  "revenue": "381,740 (USD - 2023-12-31)",
+  "employee_count": "70 employees",
+  "external_vendor_id": "",
+  "uploaded_name": "CHINA STATE CONSTRUCTION ENGINEERING CORPORATION",
+  "annexure": [
+    {
+      "id": "1",
+      "title": "Full List of Shareholders",
+      "contents": "\n\nDirect Shareholders\n\n\n1. STATE COUNCIL STATE PROPERTY MANAGEMENT COMMISSION (100.00%)\n\n\n\nOther Shareholders\n\n\n1. GOVERNMENT OF CHINA"
+    },
+    {
+      "id": "2",
+      "title": "Key Management Personnel",
+      "contents": "Current Key Executives\n\n\n1. Mr Jie Huang - Chief Financial Officer (CFO); Financial executive (Finance & Accounting)\n2. Mr Xuexuan Zheng - President / Chairman (Board of Directors)\n3. Ms Guangxiu Dan - Member (Board of Directors)\n4. Mr Bing Wen - Member (Board of Directors)\n5. Mr Lijie Zhou - Member (Board of Directors)\n6. Industrial and commercial bank of china, beijing branch million zhuang branch - Banker (Advisors)\n\n\nPrevious Key Executives\n\n\n1. Mr Qing Guan - President / Chairman; Highest executive (Board of Directors; Senior management)\n2. Mr qing guan - President / Chairman (Board of Directors)\n3. Mr Naixiang Zhou - President / Chairman; Representative (Board of Directors; Senior management)\n4. Mr Jian Yang - President / Chairman (Supervisory Board)\n5. Mr Xiangming Wang - Member; Highest executive (Board of Directors; Senior management)\n6. Mr Jun Yi - Representative (Senior management)\n7. Mr Zhaoxiang Zhang - Member (Board of Directors)\n8. Mr Yuping Li - Member (Supervisory Board)\n9. Mr Lei Mao - Member (Supervisory Board)\n10. Mr Zhen Sun - Member (Supervisory Board)\n11. Mr Tao Tian - Member (Supervisory Board)\n12. Mr Rongkui Wu - Member (Supervisory Board)\n13. Mr Surong Zhang - Member (Supervisory Board)\n14. Mr Wenlian Zhou - Member (Supervisory Board)\n15. Ms Ling Zong - Member (Supervisory Board)\n16. Industrial and commercial bank of china beijing wanwanzhuang sub-branch - Banker (Advisors)\n17. Zhong guo jian she yin xing bei jing shi fen xing hai dian qu si ji qing zhi xing - Banker (Advisors)"
+    }
+  ],
+  "sanctions_findings": true,
+  "sape_data": [
+    {
+      "kpi_area": "SAN",
+      "kpi_code": "SAN3A",
+      "kpi_flag": true,
+      "kpi_details": "Sanctions or watchlist exposure identified among following members of the corporate group:\n1. Global Ultimate Owner: GOVERNMENT OF CHINA  - Sanctions/Watchlist exposure\n2. Beneficial Owners [Company]: STATE COUNCIL STATE PROPERTY MANAGEMENT COMMISSION (100.00%) - Sanctions/Watchlist exposure\n3. Beneficial Owners [Company]: GOVERNMENT OF CHINA (>25%) - Sanctions/Watchlist exposure\n",
+      "kpi_rating": "High",
+      "kpi_definition": "Associated Corporate Group - Sanctions Exposure",
+      "kpi_data": [
+        "Global Ultimate Owner: GOVERNMENT OF CHINA  - Sanctions/Watchlist exposure",
+        "Beneficial Owners [Company]: STATE COUNCIL STATE PROPERTY MANAGEMENT COMMISSION (100.00%) - Sanctions/Watchlist exposure",
+        "Beneficial Owners [Company]: GOVERNMENT OF CHINA (>25%) - Sanctions/Watchlist exposure"
+      ]
+    }
+  ],
+  "bribery_findings": false,
+  "corruption_findings": false,
+  "financial_findings": true,
+  "financial_data": [
+    {
+      "kpi_area": "BKR",
+      "kpi_code": "BKR5A",
+      "kpi_flag": true,
+      "kpi_details": "Current Ratio: Medium (1.16)",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Current Ratio",
+      "kpi_data": [
+        "Current Ratio: Medium (1.16)"
+      ]
+    }
+  ],
+  "sown_findings": true,
+  "sown_data": [
+    {
+      "kpi_area": "SCO",
+      "kpi_code": "SCO1A",
+      "kpi_flag": true,
+      "kpi_details": "Global Ultimate Owner: GOVERNMENT OF CHINA, is Public authority, state, government",
+      "kpi_rating": "High",
+      "kpi_definition": "Global Ultimate Owner Is Public Authority/State/Government",
+      "kpi_data": null
+    },
+    {
+      "kpi_area": "PEP",
+      "kpi_code": "PEP3A",
+      "kpi_flag": true,
+      "kpi_details": "PEP exposure identified among following members of the corporate group:\n1. Global Ultimate Owner: GOVERNMENT OF CHINA  - PEP exposure\n2. Beneficial Owners [Company]: GOVERNMENT OF CHINA (>25%) - PEP exposure\n3. Ultimately Owned Subsidiaries: VISION OVERSEAS MEDIA LTD (N/A) - PEP exposure\n",
+      "kpi_rating": "High",
+      "kpi_definition": "Associated Corporate Group - PeP/SOE Exposure",
+      "kpi_data": [
+        "Global Ultimate Owner: GOVERNMENT OF CHINA  - PEP exposure",
+        "Beneficial Owners [Company]: GOVERNMENT OF CHINA (>25%) - PEP exposure",
+        "Ultimately Owned Subsidiaries: VISION OVERSEAS MEDIA LTD (N/A) - PEP exposure"
+      ]
+    },
+    {
+      "kpi_area": "PEP",
+      "kpi_code": "PEP1B",
+      "kpi_flag": true,
+      "kpi_details": "Following PeP findings :\n1. Mr Xuexuan Zheng (Current Key Executive - Chairman): Potential Political Exposure Findings\n2. Ms Guangxiu Dan (Current Key Executive - ): Potential Political Exposure Findings\n3. Mr Bing Wen (Current Key Executive - ): Potential Political Exposure Findings\n4. Mr Lijie Zhou (Current Key Executive - ): Potential Political Exposure Findings\n5. Mr Jie Huang (Current Key Executive - Chief Financial Officer): Potential Political Exposure Findings\n6. Mr Qing Guan (Previous Key Executive - Chairman and Managing Director): Potential Political Exposure Findings\n7. Mr Naixiang Zhou (Previous Key Executive - Chairman of the Board; Legal Representative): Potential Political Exposure Findings\n8. Mr Xiangming Wang (Previous Key Executive - General Manager; Director): Potential Political Exposure Findings\n9. Mr Zhaoxiang Zhang (Previous Key Executive - ): Potential Political Exposure Findings\n10. Mr Jian Yang (Previous Key Executive - Supervisory Board Chairman): Potential Political Exposure Findings\n11. Mr Yuping Li (Previous Key Executive - ): Potential Political Exposure Findings\n12. Mr Lei Mao (Previous Key Executive - ): Potential Political Exposure Findings\n13. Mr Zhen Sun (Previous Key Executive - ): Potential Political Exposure Findings\n14. Mr Tao Tian (Previous Key Executive - ): Potential Political Exposure Findings\n15. Mr Rongkui Wu (Previous Key Executive - ): Potential Political Exposure Findings\n16. Mr Surong Zhang (Previous Key Executive - ): Potential Political Exposure Findings\n17. Mr Wenlian Zhou (Previous Key Executive - ): Potential Political Exposure Findings\n18. Ms Ling Zong (Previous Key Executive - ): Potential Political Exposure Findings\n19. Mr Jun Yi (Previous Key Executive - Legal representative): Potential Political Exposure Findings\n",
+      "kpi_rating": "High",
+      "kpi_definition": "PeP for Direct Affiliations -  Person Level",
+      "kpi_data": [
+        "Mr Xuexuan Zheng (Current Key Executive - Chairman): Potential Political Exposure Findings",
+        "Ms Guangxiu Dan (Current Key Executive - ): Potential Political Exposure Findings",
+        "Mr Bing Wen (Current Key Executive - ): Potential Political Exposure Findings",
+        "Mr Lijie Zhou (Current Key Executive - ): Potential Political Exposure Findings",
+        "Mr Jie Huang (Current Key Executive - Chief Financial Officer): Potential Political Exposure Findings",
+        "Mr Qing Guan (Previous Key Executive - Chairman and Managing Director): Potential Political Exposure Findings",
+        "Mr Naixiang Zhou (Previous Key Executive - Chairman of the Board; Legal Representative): Potential Political Exposure Findings",
+        "Mr Xiangming Wang (Previous Key Executive - General Manager; Director): Potential Political Exposure Findings",
+        "Mr Zhaoxiang Zhang (Previous Key Executive - ): Potential Political Exposure Findings",
+        "Mr Jian Yang (Previous Key Executive - Supervisory Board Chairman): Potential Political Exposure Findings",
+        "Mr Yuping Li (Previous Key Executive - ): Potential Political Exposure Findings",
+        "Mr Lei Mao (Previous Key Executive - ): Potential Political Exposure Findings",
+        "Mr Zhen Sun (Previous Key Executive - ): Potential Political Exposure Findings",
+        "Mr Tao Tian (Previous Key Executive - ): Potential Political Exposure Findings",
+        "Mr Rongkui Wu (Previous Key Executive - ): Potential Political Exposure Findings",
+        "Mr Surong Zhang (Previous Key Executive - ): Potential Political Exposure Findings",
+        "Mr Wenlian Zhou (Previous Key Executive - ): Potential Political Exposure Findings",
+        "Ms Ling Zong (Previous Key Executive - ): Potential Political Exposure Findings",
+        "Mr Jun Yi (Previous Key Executive - Legal representative): Potential Political Exposure Findings"
+      ]
+    }
+  ],
+  "corporate_ownership_findings": false,
+  "adv_findings": false,
+  "reg_findings": false,
+  "leg_findings": false,
+  "additional_indicators_findings": true,
+  "additional_indicators_data": [
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1B",
+      "kpi_flag": true,
+      "kpi_details": "High Implied Cyber Risk",
+      "kpi_rating": "High",
+      "kpi_definition": "Implied Cyber Risk Rating Score",
+      "kpi_data": [
+        "High Implied Cyber Risk"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB2A",
+      "kpi_flag": true,
+      "kpi_details": "Final Cyber Risk Rating: High (Based on Implied Risk)",
+      "kpi_rating": "High",
+      "kpi_definition": "Overall Cyber Risk Rating",
+      "kpi_data": [
+        "Final Cyber Risk Rating: High (Based on Implied Risk)"
+      ]
+    }
+  ],
+  "session_id": "3f07a685-e9fc-4ae7-9e6f-7154cde3a092",
+  "ens_id": "746a6ac5-ff00-40cd-b462-97e22b2b022a",
+  "disable-regulator-and-legal": true
+}

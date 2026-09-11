@@ -1,0 +1,170 @@
+{
+  "date": "10th September, 2026",
+  "risk_level": "High",
+  "summary_of_findings": "Our analysis of MITSUBISHI CORPORATION LT, INC. Reveals high risk overall, considerable sanctions exposure affecting international business development. Additional indicators shows, our examination found notable cyber vulnerability indicators requiring oversight. The risk profile necessitates proactive monitoring and comprehensive mitigation planning.",
+  "sanctions_summary": [
+    "There are 2 potential sanctions findings within the corporate group."
+  ],
+  "anti_summary": [
+    "No notable Bribery, Corruption, or Fraud findings for this entity."
+  ],
+  "gov_summary": [
+    "Group / Global Ultimate Owner not found to be state-controlled",
+    "No PEP findings for the individual."
+  ],
+  "financial_summary": [
+    "No financials available."
+  ],
+  "adv_summary": [
+    "No adverse media findings."
+  ],
+  "additional_indicators_summary": [
+    "There are notable findings in cybersecurity screening/profiling for this entity."
+  ],
+  "ral_summary": [
+    "No legal or regulatory findings available."
+  ],
+  "gov_rating": "No Alerts",
+  "anti_rating": "No Alerts",
+  "regulatory_and_legal_rating": "Deactivated",
+  "adv_rating": "No Alerts",
+  "financial_rating": "No Alerts",
+  "additional_indicators_rating": "Medium",
+  "esg_rating": "No Alerts",
+  "cyber_rating": "Medium",
+  "sanctions_rating": "High",
+  "entity_existence_rating": "Low",
+  "name": "MITSUBISHI CORPORATION LT, INC.",
+  "google_image_name": "JP3010001032170_610",
+  "location": "YOKOHAMA, Japan",
+  "address": "2-1-8 ANZEN-CHO, TSURUMI-KU, 230-0035, YOKOHAMA, Japan",
+  "website": "www.mclogi.com",
+  "active_status": "Active",
+  "operation_type": "Publicly quoted",
+  "legal_status": "Public limited companies",
+  "national_id": "VAT/Tax number: 3010001032170",
+  "alias": "N/A",
+  "incorporation_date": "31/07/1947",
+  "subsidiaries": "12 entities",
+  "corporate_group": "764 entities",
+  "shareholders": "Other minority shareholders ~100.0%",
+  "key_exec": "Mr Tetsu Tanaka (Legal Representative)\n\nMITSUBISHI UFJ TRUST AND BANKING, H.O. ()\n\nMUFG BANK, H.O. ()\n\n\n & 5 previous key executives",
+  "revenue": "125M (USD - 2026-12-31)",
+  "employee_count": "200 employees",
+  "external_vendor_id": "test_3010001032170",
+  "uploaded_name": "Mitsubishi Corporation",
+  "annexure": [
+    {
+      "id": "1",
+      "title": "Full List of Shareholders",
+      "contents": "\n\nDirect Shareholders\n\n\n1. MITSUBISHI CORPORATION (100.00%)"
+    },
+    {
+      "id": "2",
+      "title": "Key Management Personnel",
+      "contents": "Current Key Executives\n\n\n1. Mr Tetsu Tanaka - Representative (Senior management)\n2. MITSUBISHI UFJ TRUST AND BANKING, H.O. - Banker (Advisors)\n3. MUFG BANK, H.O. - Banker (Advisors)\n\n\nPrevious Key Executives\n\n\n1. Mr Thatsueya Fujisaku - Representative (Senior management)\n2. Mr Kosuke Iwai - Representative (Senior management)\n3. Mr Fuminori Kawamura - Representative (Senior management)\n4. Mr Koji Tamura - Representative (Senior management)\n5. BANK OF TOKYO-MITSUBISHI UFJ, H.O. - Banker (Advisors)"
+    }
+  ],
+  "entity_existence_findings": true,
+  "entity_existence_data": [
+    {
+      "kpi_area": "DOM",
+      "kpi_code": "DOM1A",
+      "kpi_flag": true,
+      "kpi_details": "[{\"Factor\": \"Domain Name\", \"Value\": \"mclogi.com\"}, {\"Factor\": \"Creation Date\", \"Value\": \"24-11-2005\"}, {\"Factor\": \"Expiration Date\", \"Value\": \"24-11-2026\"}, {\"Factor\": \"Updated Date\", \"Value\": \"08-11-2025\"}, {\"Factor\": \"Registrant Org\", \"Value\": \"\"}, {\"Factor\": \"Registrant Country\", \"Value\": \"\"}, {\"Factor\": \"Registrar\", \"Value\": \"gmo internet group, inc. d/b/a onamae.com\"}, {\"Factor\": \"Registrar Url\", \"Value\": \"https://internet.gmo/\"}, {\"Factor\": \"Emails\", \"Value\": \"\"}, {\"Factor\": \"Dnssec\", \"Value\": \"unsigned\"}, {\"Factor\": \"Vendor Onboarding Date (Client Database)\", \"Value\": \"\"}]",
+      "kpi_rating": "Low",
+      "kpi_definition": "Domain Validation",
+      "kpi_data": null
+    }
+  ],
+  "sanctions_findings": true,
+  "sape_data": [
+    {
+      "kpi_area": "SAN",
+      "kpi_code": "SAN3A",
+      "kpi_flag": true,
+      "kpi_details": "Sanctions or watchlist exposure identified among following members of the corporate group:\n1. Global Ultimate Owner: MITSUBISHI CORPORATION (100.00%) - Sanctions/Watchlist exposure\n2. Beneficial Owners [Company]: MITSUBISHI CORPORATION (100.00%) - Sanctions/Watchlist exposure\n",
+      "kpi_rating": "High",
+      "kpi_definition": "Associated Corporate Group - Sanctions Exposure",
+      "kpi_data": [
+        "Global Ultimate Owner: MITSUBISHI CORPORATION (100.00%) - Sanctions/Watchlist exposure",
+        "Beneficial Owners [Company]: MITSUBISHI CORPORATION (100.00%) - Sanctions/Watchlist exposure"
+      ]
+    }
+  ],
+  "bribery_findings": false,
+  "corruption_findings": false,
+  "financial_findings": true,
+  "financial_data": [
+    {
+      "kpi_area": "FIN",
+      "kpi_code": "FIN1A",
+      "kpi_flag": true,
+      "kpi_details": "[2026-12-31]: 125M\n[2024-03-31]: 127M\n[2023-03-31]: 244M\n",
+      "kpi_rating": "INFO",
+      "kpi_definition": "Operating Revenue - Recent Years (USD)",
+      "kpi_data": [
+        "[2026-12-31]: 125M",
+        "[2024-03-31]: 127M",
+        "[2023-03-31]: 244M"
+      ]
+    },
+    {
+      "kpi_area": "FIN",
+      "kpi_code": "FIN2A",
+      "kpi_flag": true,
+      "kpi_details": "[2026-12-31]: 20M\n[2024-03-31]: 16M\n[2023-03-31]: 14M\n",
+      "kpi_rating": "INFO",
+      "kpi_definition": "Profit Loss After Tax - Recent Years (USD)",
+      "kpi_data": [
+        "[2026-12-31]: 20M",
+        "[2024-03-31]: 16M",
+        "[2023-03-31]: 14M"
+      ]
+    }
+  ],
+  "sown_findings": false,
+  "corporate_ownership_findings": false,
+  "adv_findings": false,
+  "reg_findings": false,
+  "leg_findings": false,
+  "additional_indicators_findings": true,
+  "additional_indicators_data": [
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1A",
+      "kpi_flag": true,
+      "kpi_details": "[{\"factor\": \"Resolved IP\", \"value\": \"15.197.153.97\"}, {\"factor\": \"Botnet Threat\", \"value\": \"NO\"}, {\"factor\": \"Malware Hosting Threat\", \"value\": \"NO\"}, {\"factor\": \"Command & Control Threat\", \"value\": \"NO\"}, {\"factor\": \"Spam Server Threat\", \"value\": \"NO\"}, {\"factor\": \"Overall Compromised\", \"value\": \"NO\"}, {\"factor\": \"Vendor / 3rd-Party Risk\", \"value\": \"PASS\"}, {\"factor\": \"Fraud / Compliance Flag\", \"value\": \"NO\"}]",
+      "kpi_rating": "Low",
+      "kpi_definition": "Cyber Risk Validation",
+      "kpi_data": [
+        "Medium Cyber Risk Rating: 730"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB1B",
+      "kpi_flag": true,
+      "kpi_details": "High Implied Cyber Risk",
+      "kpi_rating": "High",
+      "kpi_definition": "Implied Cyber Risk Rating Score",
+      "kpi_data": [
+        "High Implied Cyber Risk"
+      ]
+    },
+    {
+      "kpi_area": "CYB",
+      "kpi_code": "CYB2A",
+      "kpi_flag": true,
+      "kpi_details": "Final Cyber Risk Rating: Medium",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Overall Cyber Risk Rating",
+      "kpi_data": [
+        "Final Cyber Risk Rating: Medium"
+      ]
+    }
+  ],
+  "session_id": "3f07a685-e9fc-4ae7-9e6f-7154cde3a092",
+  "ens_id": "7eb0a56d-a97e-428a-a139-20c40ccf9945",
+  "disable-regulator-and-legal": true
+}
