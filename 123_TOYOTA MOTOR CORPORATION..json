@@ -1,7 +1,7 @@
 {
-  "date": "10th September, 2026",
+  "date": "14th September, 2026",
   "risk_level": "High",
-  "summary_of_findings": "The third-party risk profile for TOYOTA MOTOR CORPORATION. Is determined to be high, significant media exposure coupled with major unfavorable press mentions identified in press investigations. Moreover, our analysis revealed concerning public sector connections together with notable economic restrictions exposure potentially affecting banking relationships. Another area of note is serious political influence factors and standard financial position raising concerns about capital adequacy. Our evaluation also notes the assessment identified moderate concerns in the entity's cyber risk profile. These concerns necessitate detailed risk management planning and regular reassessment.",
+  "summary_of_findings": "The risk evaluation of TOYOTA MOTOR CORPORATION. Indicates high concern levels, substantial media sentiment associated with critical media criticism uncovered by watchdog organizations. Moreover, our analysis revealed concerning state control indicators and major economic restrictions exposure affecting international business development. In addition, we observed serious political influence factors in conjunction with standard debt ratios affecting liquidity positions. In terms of additional indicators, our evaluation highlights potential vulnerabilities in the company's cybersecurity posture. The identified concerns warrant extensive controls and enhanced monitoring protocols.",
   "sanctions_summary": [
     "There are 1 potential sanctions findings within the corporate group."
   ],
@@ -44,7 +44,7 @@
   "operation_type": "Publicly quoted",
   "legal_status": "Public limited companies",
   "national_id": "VAT/Tax number: 1180301018771",
-  "alias": "TOYOTA JIDOSHA KABUSHIKI KAISHATMC\n\nTOYOTA JIDOSHA KABUSHIKI KAISHA",
+  "alias": "TOYOTA JIDOSHA KABUSHIKI KAISHA\n\nTOYOTA JIDOSHA KABUSHIKI KAISHATMC",
   "incorporation_date": "28/08/1937",
   "subsidiaries": "779 entities",
   "corporate_group": "810 entities",
@@ -72,7 +72,7 @@
       "kpi_area": "DOM",
       "kpi_code": "DOM1A",
       "kpi_flag": true,
-      "kpi_details": "[{\"Factor\": \"Domain Name\", \"Value\": \"toyota-global.com\"}, {\"Factor\": \"Creation Date\", \"Value\": \"19-04-2006\"}, {\"Factor\": \"Expiration Date\", \"Value\": \"19-04-2027\"}, {\"Factor\": \"Updated Date\", \"Value\": \"03-02-2026\"}, {\"Factor\": \"Registrant Org\", \"Value\": \"redacted for privacy\"}, {\"Factor\": \"Registrant Country\", \"Value\": \"jp\"}, {\"Factor\": \"Registrar\", \"Value\": \"1api gmbh\"}, {\"Factor\": \"Registrar Url\", \"Value\": [\"http://www.1api.net\", \"http://brightsconsulting.com\"]}, {\"Factor\": \"Emails\", \"Value\": \"abuse@1api.net, domain.master@brights.jp\"}, {\"Factor\": \"Dnssec\", \"Value\": \"unsigned\"}, {\"Factor\": \"Vendor Onboarding Date (Client Database)\", \"Value\": \"\"}]",
+      "kpi_details": "[{\"Factor\": \"Domain Name\", \"Value\": \"toyota-global.com\"}, {\"Factor\": \"Creation Date\", \"Value\": \"19-04-2006\"}, {\"Factor\": \"Expiration Date\", \"Value\": \"19-04-2027\"}, {\"Factor\": \"Updated Date\", \"Value\": \"03-02-2026\"}, {\"Factor\": \"Registrant Org\", \"Value\": \"redacted for privacy\"}, {\"Factor\": \"Registrant Country\", \"Value\": \"jp\"}, {\"Factor\": \"Registrar\", \"Value\": \"1api gmbh\"}, {\"Factor\": \"Registrar Url\", \"Value\": [\"http://brightsconsulting.com\", \"http://www.1api.net\"]}, {\"Factor\": \"Emails\", \"Value\": \"abuse@1api.net, domain.master@brights.jp\"}, {\"Factor\": \"Dnssec\", \"Value\": \"unsigned\"}, {\"Factor\": \"Vendor Onboarding Date (Client Database)\", \"Value\": \"\"}]",
       "kpi_rating": "Low",
       "kpi_definition": "Domain Validation",
       "kpi_data": null
@@ -203,7 +203,7 @@
       ]
     }
   ],
-  "session_id": "3f07a685-e9fc-4ae7-9e6f-7154cde3a092",
+  "session_id": "6a7ad52c-4567-445b-9d73-c64d5fd8c1b6",
   "ens_id": "7e7805eb-d04e-4787-9e85-49ef790d149a",
   "disable-regulator-and-legal": true
 }

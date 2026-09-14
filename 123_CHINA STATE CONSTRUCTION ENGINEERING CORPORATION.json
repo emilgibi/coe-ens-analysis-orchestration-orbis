@@ -1,7 +1,7 @@
 {
-  "date": "10th September, 2026",
+  "date": "14th September, 2026",
   "risk_level": "High",
-  "summary_of_findings": "CHINA STATE CONSTRUCTION ENGINEERING CORPORATION presents an high overall risk profile, concerning sovereign interest presence alongside significant economic restrictions exposure limiting market access. Beyond this, our evaluation found prominent political connection risks plus average profitability indicators affecting cash flow projections. Additional assessment reveals the assessment identified moderate concerns in the entity's cyber risk profile. The assessment results call for specialized monitoring and comprehensive risk reporting.",
+  "summary_of_findings": "The risk assessment for CHINA STATE CONSTRUCTION ENGINEERING CORPORATION shows high overall risk, elevated public sector connections along with critical sanctions risk management potentially complicating international contracts. The company's profile also indicates notable political connection risks connected to moderate balance sheet strength affecting cash flow projections. Additional indicators shows, notable observations were made regarding the company's digital protection measures. The identified concerns warrant extensive controls and enhanced monitoring protocols.",
   "sanctions_summary": [
     "There are 3 potential sanctions findings within the corporate group."
   ],
@@ -111,19 +111,6 @@
     },
     {
       "kpi_area": "PEP",
-      "kpi_code": "PEP3A",
-      "kpi_flag": true,
-      "kpi_details": "PEP exposure identified among following members of the corporate group:\n1. Global Ultimate Owner: GOVERNMENT OF CHINA  - PEP exposure\n2. Beneficial Owners [Company]: GOVERNMENT OF CHINA (>25%) - PEP exposure\n3. Ultimately Owned Subsidiaries: VISION OVERSEAS MEDIA LTD (N/A) - PEP exposure\n",
-      "kpi_rating": "High",
-      "kpi_definition": "Associated Corporate Group - PeP/SOE Exposure",
-      "kpi_data": [
-        "Global Ultimate Owner: GOVERNMENT OF CHINA  - PEP exposure",
-        "Beneficial Owners [Company]: GOVERNMENT OF CHINA (>25%) - PEP exposure",
-        "Ultimately Owned Subsidiaries: VISION OVERSEAS MEDIA LTD (N/A) - PEP exposure"
-      ]
-    },
-    {
-      "kpi_area": "PEP",
       "kpi_code": "PEP1B",
       "kpi_flag": true,
       "kpi_details": "Following PeP findings :\n1. Mr Xuexuan Zheng (Current Key Executive - Chairman): Potential Political Exposure Findings\n2. Ms Guangxiu Dan (Current Key Executive - ): Potential Political Exposure Findings\n3. Mr Bing Wen (Current Key Executive - ): Potential Political Exposure Findings\n4. Mr Lijie Zhou (Current Key Executive - ): Potential Political Exposure Findings\n5. Mr Jie Huang (Current Key Executive - Chief Financial Officer): Potential Political Exposure Findings\n6. Mr Qing Guan (Previous Key Executive - Chairman and Managing Director): Potential Political Exposure Findings\n7. Mr Naixiang Zhou (Previous Key Executive - Chairman of the Board; Legal Representative): Potential Political Exposure Findings\n8. Mr Xiangming Wang (Previous Key Executive - General Manager; Director): Potential Political Exposure Findings\n9. Mr Zhaoxiang Zhang (Previous Key Executive - ): Potential Political Exposure Findings\n10. Mr Jian Yang (Previous Key Executive - Supervisory Board Chairman): Potential Political Exposure Findings\n11. Mr Yuping Li (Previous Key Executive - ): Potential Political Exposure Findings\n12. Mr Lei Mao (Previous Key Executive - ): Potential Political Exposure Findings\n13. Mr Zhen Sun (Previous Key Executive - ): Potential Political Exposure Findings\n14. Mr Tao Tian (Previous Key Executive - ): Potential Political Exposure Findings\n15. Mr Rongkui Wu (Previous Key Executive - ): Potential Political Exposure Findings\n16. Mr Surong Zhang (Previous Key Executive - ): Potential Political Exposure Findings\n17. Mr Wenlian Zhou (Previous Key Executive - ): Potential Political Exposure Findings\n18. Ms Ling Zong (Previous Key Executive - ): Potential Political Exposure Findings\n19. Mr Jun Yi (Previous Key Executive - Legal representative): Potential Political Exposure Findings\n",
@@ -149,6 +136,19 @@
         "Mr Wenlian Zhou (Previous Key Executive - ): Potential Political Exposure Findings",
         "Ms Ling Zong (Previous Key Executive - ): Potential Political Exposure Findings",
         "Mr Jun Yi (Previous Key Executive - Legal representative): Potential Political Exposure Findings"
+      ]
+    },
+    {
+      "kpi_area": "PEP",
+      "kpi_code": "PEP3A",
+      "kpi_flag": true,
+      "kpi_details": "PEP exposure identified among following members of the corporate group:\n1. Global Ultimate Owner: GOVERNMENT OF CHINA  - PEP exposure\n2. Beneficial Owners [Company]: GOVERNMENT OF CHINA (>25%) - PEP exposure\n3. Ultimately Owned Subsidiaries: VISION OVERSEAS MEDIA LTD (N/A) - PEP exposure\n",
+      "kpi_rating": "High",
+      "kpi_definition": "Associated Corporate Group - PeP/SOE Exposure",
+      "kpi_data": [
+        "Global Ultimate Owner: GOVERNMENT OF CHINA  - PEP exposure",
+        "Beneficial Owners [Company]: GOVERNMENT OF CHINA (>25%) - PEP exposure",
+        "Ultimately Owned Subsidiaries: VISION OVERSEAS MEDIA LTD (N/A) - PEP exposure"
       ]
     }
   ],
@@ -181,7 +181,7 @@
       ]
     }
   ],
-  "session_id": "3f07a685-e9fc-4ae7-9e6f-7154cde3a092",
+  "session_id": "6a7ad52c-4567-445b-9d73-c64d5fd8c1b6",
   "ens_id": "746a6ac5-ff00-40cd-b462-97e22b2b022a",
   "disable-regulator-and-legal": true
 }

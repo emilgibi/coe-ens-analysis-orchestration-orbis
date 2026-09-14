@@ -1,7 +1,7 @@
 {
-  "date": "10th September, 2026",
+  "date": "14th September, 2026",
   "risk_level": "High",
-  "summary_of_findings": "Our analysis of MITSUBISHI CORPORATION LT, INC. Reveals high risk overall, considerable sanctions exposure affecting international business development. Additional indicators shows, our examination found notable cyber vulnerability indicators requiring oversight. The risk profile necessitates proactive monitoring and comprehensive mitigation planning.",
+  "summary_of_findings": "The risk profile of MITSUBISHI CORPORATION LT, INC. Is categorized as high overall, notable restricted party involvement threatening international operations. Additional indicators shows, the assessment identified moderate concerns in the entity's cyber risk profile. These findings warrant in-depth investigation and structured risk management approaches.",
   "sanctions_summary": [
     "There are 2 potential sanctions findings within the corporate group."
   ],
@@ -134,9 +134,9 @@
       "kpi_area": "CYB",
       "kpi_code": "CYB1A",
       "kpi_flag": true,
-      "kpi_details": "[{\"factor\": \"Resolved IP\", \"value\": \"15.197.153.97\"}, {\"factor\": \"Botnet Threat\", \"value\": \"NO\"}, {\"factor\": \"Malware Hosting Threat\", \"value\": \"NO\"}, {\"factor\": \"Command & Control Threat\", \"value\": \"NO\"}, {\"factor\": \"Spam Server Threat\", \"value\": \"NO\"}, {\"factor\": \"Overall Compromised\", \"value\": \"NO\"}, {\"factor\": \"Vendor / 3rd-Party Risk\", \"value\": \"PASS\"}, {\"factor\": \"Fraud / Compliance Flag\", \"value\": \"NO\"}]",
-      "kpi_rating": "Low",
-      "kpi_definition": "Cyber Risk Validation",
+      "kpi_details": "Medium Cyber Risk Rating: 730",
+      "kpi_rating": "Medium",
+      "kpi_definition": "Cyber Risk Rating Score",
       "kpi_data": [
         "Medium Cyber Risk Rating: 730"
       ]
@@ -164,7 +164,7 @@
       ]
     }
   ],
-  "session_id": "3f07a685-e9fc-4ae7-9e6f-7154cde3a092",
+  "session_id": "6a7ad52c-4567-445b-9d73-c64d5fd8c1b6",
   "ens_id": "7eb0a56d-a97e-428a-a139-20c40ccf9945",
   "disable-regulator-and-legal": true
 }
